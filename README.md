@@ -46,14 +46,56 @@ Quotes:
 - `/`
   - HomePageComponent
   - public
-  - just promotional copy
+  - app description
 - `/auth/signup`
   - SignupPageComponent
-  - anon only
+  - public
   - signup form, link to login
   - navigate to homepage after signup
 - `/auth/login`
   - LoginPageComponent
-  - anon only
+  - public
   - login form, link to signup
   - navigate to dashboard after login
+- `/products`
+  - ProductsListPageComponent
+  - authorized users
+  - shows all products, link to create new product.
+- `/products/create`
+  - ProductsCreatePageComponent
+  - authorized users
+  - creates a new service
+  - navigates to service detail page after creation
+- `/services` 
+  - ServicesListPageComponent
+  - authorized users
+  - shows all services, link to create new service.
+- `/services/create` 
+  - ServicesCreatePageComponent
+  - authorized users
+  - creates a new service
+  - navigates to service detail page after creation
+- `/quotes` 
+  - QuoteListPageComponent
+  - authorized users
+  - shows all quotes, links to details, link to create new quote
+  - search quotes by filters
+- `/quotes/create`
+  - QuoteCreatePageComponent
+  - authorized users
+  - creates a new quote
+  - navigates to quote detail page after creation
+- `/quotes/:id`
+  - QuoteDetailPageComponent
+  - authorized users
+  - quote details
+  - download and copy link url
+- `/quotes/:user_id/:id`
+  - QuotePageComponent
+  - public
+- `/profile` 
+  - ProfilePageComponent
+  - authorized users
+  - user and company details
+- `**`
+  - NotFoundPageComponent
