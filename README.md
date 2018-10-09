@@ -7,10 +7,10 @@ Quoter is a tool designed to let freelancers and companies quote more efficientl
 ## User Stories
 
 - **404:** The user sees a 404 page when reaching a page that does not exist.
-- **Signup:**The user can create a free account to the app.
+- **Signup:** The user can create a free account to the app.
 - **Login:** The user can login to the app to create products, services and quotes.
-- **Logout:**  can logout from the platform so no one else can use it
-- **Create user profile:**  The user can fill its profile information.
+- **Logout:**  The user can logout from the platform.
+- **Create user and company profile:**  The user can fill user and company's profile.
 - **Add products and services:** The user can add products and services that will later be added to quotes.
 - **List products and services:** The user can see a list of products and services added to edit or delete.
 - **Create a quote:** The user can create quotes through a form for the basic info and then choose from the list of products and services created before.
