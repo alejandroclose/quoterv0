@@ -1,41 +1,40 @@
 import React from 'react';
 import "bulma-start/css/main.css";
-import logo from "../logo_1.png"
 
 
 const Sidebar = (props) => {
 return <div>
 
-<section class="main-content columns is-fullheight">
+<section className="main-content columns is-fullheight">
   
-  <aside class="column is-2 is-narrow-mobile is-fullheight section">
-    <ul class="menu-list">
+  <aside className="column is-2 is-narrow-mobile is-fullheight section">
+    <ul className="menu-list">
       <li>
-        <a href="#" class="">
-          <span class="icon"><i class="fa fa-home"></i></span> Home
+        <a href="/" className="is-active">
+          <span className="icon"><i className="fa fa-home"></i></span> Desk
         </a>
       </li>
       <li>
-        <a href="#" class="is-active">
-          <span class="icon"><i class="fa fa-table"></i></span> Links
+        <a href="/" className="">
+          <span className="icon"><i className="fa fa-table"></i></span> Links
         </a>
 
         <ul>
           <li>
-            <a href="#">
-              <span class="icon is-small"><i class="fa fa-link"></i></span> Link1
+            <a href="/">
+              <span className="icon is-small"><i className="fa fa-link"></i></span> Link1
             </a>
           </li>
           <li>
-            <a href="#">
-              <span class="icon is-small"><i class="fa fa-link"></i></span> Link2
+            <a href="/">
+              <span className="icon is-small"><i className="fa fa-link"></i></span> Link2
             </a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="#" class="">
-          <span class="icon"><i class="fa fa-info"></i></span> About
+        <a href="/" className="">
+          <span className="icon"><i className="fa fa-info"></i></span> About
         </a>
       </li>
     </ul>

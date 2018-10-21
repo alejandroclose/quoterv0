@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import "bulma-start/css/main.css";
 import Header from '../src/components/Header';
 import Sidebar from '../src/components/Sidebar';
+import Footer from '../src/components/Footer';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
       <Header/>
       <Sidebar/>
+      <Footer/>
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>

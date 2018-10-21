@@ -6,3 +6,7 @@
 .navbar-brand{
   margin-left: 40px;
 }
+
+.column{
+  border: black;
+}
