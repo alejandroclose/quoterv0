@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Header from '../src/components/Header';
+import Sidebar from '../src/components/Sidebar';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
       <Header/>
+      <Sidebar/>
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
