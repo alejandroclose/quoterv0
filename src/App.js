@@ -13,16 +13,14 @@ import AuthProvider from './components/AuthProvider';
 import './App.css';
 import "bulma-start/css/main.css";
 
-import Header from './components/Header';
-
 class App extends Component {
   render() {
     return (
       <AuthProvider>
         <Switch>
-          {/* <AnonRoute path="/signup" component={Signup} />
+          <AnonRoute path="/signup" component={Signup} />
           <AnonRoute path="/login" component={Login} />
-          <PrivateRoute path="/private" component={Private} /> */}
+          <PrivateRoute path="/private" component={Private} />
           <Route path="/" component={Home} />
         </Switch>
       </AuthProvider>

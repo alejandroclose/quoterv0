@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 // import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
+// import Header from '../components/Header';
 
 
-class Home extends Component {
-
+class Desk extends Component {
   render() {
     return (
       <div>
-        <Header name="Sara"/>
+        Desk
       </div>
     )
   }
 }
 
-export default Home;
+export default Desk;

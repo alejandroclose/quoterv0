@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from "../logo_1.png"
 
-
-const Header = (props) => {
-  return <div>    
-<nav className="navbar has-shadow" role="navigation" aria-label="main navigation">
+class Header extends Component {
+  render() {
+    return(
+      <div>
+        <nav className="navbar has-shadow" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
     <a className="navbar-item" href="/">
     <h1>Quoter</h1>
@@ -44,7 +45,16 @@ const Header = (props) => {
     </div>
   </div>
 </nav>
-        </div>
 
+        </div>
+    )
+  }
 }
+
+// const Header = (props) => {
+//   console.log(props);
+//   return <div>    
+//         </div>
+
+// }
 export default Header
