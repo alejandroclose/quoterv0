@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import {Route, Switch} from 'react-router-dom'
+import { Switch} from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 
 import Private from './pages/Private';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Home from './pages/Home';
+import ProductsList from './pages/Products-List';
 import AuthProvider from './components/AuthProvider';
 
 import './App.css';
@@ -21,7 +21,8 @@ class App extends Component {
           <AnonRoute path="/signup" component={Signup} />
           <AnonRoute path="/login" component={Login} />
           <PrivateRoute path="/private" component={Private} />
-          <Route path="/" component={Home} />
+          <PrivateRoute path="/products" component={ProductsList} />
+          {/* <Route path="/quotes" component={Desk} /> */}
         </Switch>
       </AuthProvider>
     );

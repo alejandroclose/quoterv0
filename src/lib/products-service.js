@@ -3,7 +3,8 @@ import axios from "axios";
 class ProductsApi {
   constructor() {
     this.productsApi = axios.create({
-      baseURL: "http://localhost:5000/products"
+      baseURL: "http://localhost:5000/products",
+      withCredentials: true
     });
   }
 
