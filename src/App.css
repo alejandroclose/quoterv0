@@ -16,11 +16,29 @@
 
 }
 
+.page-content{
+  display: flex;
+  flex-direction: row;
+}
+
+.main-page-content{
+  margin: 30px;
+}
+
 .cards-collection{
   display: flex;
   flex-direction: row;
 }
 .card{
   width: 150px;
+  height: 150px;
   margin: 10px;
+}
+
+.content{
+  min-height: 50px;
+}
+
+.li > a {
+  width: 50px;
 }

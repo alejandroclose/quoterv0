@@ -22,8 +22,8 @@ return <div>
         </a>
       </li>
       <li>
-        <a href="/" className="">
-          <span className="icon"><i className="fa fa-table"></i></span> Links
+        <a href="/products" className="is-active">
+          <span className="icon"><i className="fa fa-table"></i></span> <p>Products</p>
         </a>
 
         <ul>
