@@ -20,32 +20,38 @@ class ProductsList extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Header />
-        <div className="page-content">
-        <div className="main-page-content">
-          <ul className="cards-collection">
-            {this.state.products.map(product => {
-              console.log(product);
-              return (
-                <div className="card" key={product._id}>
-                  <div className="card-content">
-                    <div className="content">{product.name}</div>
-                    <div className="card-footer">
-                      <a href="/products" className="card-footer-item">
-                        Edit
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
-      </div>
-    );
+    const {isLoading} = this.state;
+    switch (isLoading) {
+      case true:
+        return <div>Loading</div>;
+      default:
+        return (
+          <div>
+            <Header />
+            <div className="page-content">
+              <div className="main-page-content">
+                <ul className="cards-collection">
+                  {this.state.products.map(product => {
+                    console.log(product);
+                    return (
+                      <div className="card" key={product._id}>
+                        <div className="card-content">
+                          <div className="content">{product.name}</div>
+                          <div className="card-footer">
+                            <a href="/products" className="card-footer-item">
+                              Edit
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+    }
   }
 }
 
