@@ -3,7 +3,8 @@ import axios from "axios";
 class UsersApi {
   constructor() {
     this.usersApi = axios.create({
-      baseURL: "http://localhost:5000/profile"
+      baseURL: "http://localhost:5000/profile",
+      withCredentials: true
     });
   }
 

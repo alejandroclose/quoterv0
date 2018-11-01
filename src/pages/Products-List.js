@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Products from "../lib/products-service";
+import Users from "../lib/user-service.js"
 import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+import { withAuth } from '../components/AuthProvider';
 
 class ProductsList extends Component {
   state = {
@@ -9,7 +9,7 @@ class ProductsList extends Component {
     isLoading: true
   };
   componentDidMount() {
-    Products.getProducts()
+    Users.getUserProducts()
       .then(data => {
         this.setState({
           products: data,
@@ -55,4 +55,4 @@ class ProductsList extends Component {
   }
 }
 
-export default ProductsList;
+export default withAuth() (ProductsList);
