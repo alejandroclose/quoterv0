@@ -20,8 +20,8 @@ class QuotesApi {
     return this.quotesApi.put(`/${id}`, body);
   }
 
-  crateQuote(id, body) {
-    return this.quotesApi.post(`/${id}`, body);
+  crateQuote(body) {
+    return this.quotesApi.post('/', body);
   }
 
   deleteProduct(id) {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Users from "../lib/user-service"
-import Quotes from "../lib/quotes-service"
 import Header from "../components/Header"
 import { withAuth } from '../components/AuthProvider';
 
@@ -35,6 +34,7 @@ class Desk extends Component {
         <Header/>
         <div className="page-content">
               <div className="main-page-content">
+              <button className="button is-success is-outlined">Add Quote</button>
                 <ul className="cards-collection">
                   {this.state.quotes.map(quote => {
                     return (
