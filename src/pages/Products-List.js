@@ -23,7 +23,7 @@ class ProductsList extends Component {
     const {isLoading} = this.state;
     switch (isLoading) {
       case true:
-        return <div>Loading</div>;
+        return <div>Loading Products</div>;
       default:
         return (
           <div>

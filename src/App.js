@@ -4,9 +4,9 @@ import { Switch} from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 
-import Desk from './pages/Desk';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Desk from './pages/Desk';
 import ProductsList from './pages/Products-List';
 import AuthProvider from './components/AuthProvider';
 
@@ -21,8 +21,7 @@ class App extends Component {
           <AnonRoute path="/signup" component={Signup} />
           <AnonRoute path="/login" component={Login} />
           <PrivateRoute path="/products" component={ProductsList} />
-          <PrivateRoute path="/" component={Desk} />
-          {/* <Route path="/quotes" component={Desk} /> */}
+          <PrivateRoute path="/quotes" component={Desk} />
         </Switch>
       </AuthProvider>
     );
