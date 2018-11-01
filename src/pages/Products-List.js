@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Users from "../lib/user-service.js"
 import Header from "../components/Header";
 import { withAuth } from '../components/AuthProvider';
+import {Link} from 'react-router-dom';
 
 class ProductsList extends Component {
   state = {
@@ -21,9 +22,13 @@ class ProductsList extends Component {
 
   render() {
     const {isLoading} = this.state;
+
     switch (isLoading) {
       case true:
-        return <div>Loading Products</div>;
+        return <div>
+            <Header />
+            Loading Products
+          </div>;
       default:
         return (
           <div>
@@ -38,9 +43,9 @@ class ProductsList extends Component {
                         <div className="card-content">
                           <div className="content">{product.name}</div>
                           <div className="card-footer">
-                            <a href="/products" className="card-footer-item">
+                            <Link to={`/products/${product._id}`} className="card-footer-item">
                               Edit
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>

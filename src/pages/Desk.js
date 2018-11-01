@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Users from "../lib/user-service"
-import Header from "../components/Header"
+import {Link} from 'react-router-dom';
+import Users from "../lib/user-service";
+import Header from "../components/Header";
 import { withAuth } from '../components/AuthProvider';
 
 
@@ -34,7 +35,7 @@ class Desk extends Component {
         <Header/>
         <div className="page-content">
               <div className="main-page-content">
-              <button className="button is-success is-outlined">Add Quote</button>
+              <Link className="button is-success is-outlined" to="/quotes/new">Add Quote</Link>
                 <ul className="cards-collection">
                   {this.state.quotes.map(quote => {
                     return (
@@ -42,9 +43,9 @@ class Desk extends Component {
                         <div className="card-content">
                           <div className="content">{quote.name}</div>
                           <div className="card-footer">
-                            <a href="/products" className="card-footer-item">
+                            <Link to={`/quotes/${quote._id}`} className="card-footer-item">
                               Edit
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>

@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import Quote from '../lib/quotes-service';
 import { withAuth } from '../components/AuthProvider';
+import Header from '../components/Header';
 
 class NewQuote extends Component {
   state = {
@@ -38,6 +39,7 @@ render() {
 
   return (
     <div>
+      <Header/>
       <form onSubmit = {this.handleSubmit}>
         <input type="text" name='name' onChange={this.handleOnChange} placeholder="Name" />
         <input type="text" name="customer_name" onChange={this.handleOnChange} placeholder="Customer Name" />
@@ -45,7 +47,6 @@ render() {
         <input type="text" name="customer_email" onChange={this.handleOnChange} placeholder="email@quoter.io" />
         <input type="text" name="products" onChange={this.handleOnChange} placeholder="Products" />
         <button type="submit">Save</button>
-        
       </form>
     </div>
   )

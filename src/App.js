@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Desk from './pages/Desk';
 import ProductsList from './pages/Products-List';
 import CreateQuote from './pages/Create-Quote';
+import EditQuote from './pages/Edit-Quote';
 import AuthProvider from './components/AuthProvider';
 
 import './App.css';
@@ -23,6 +24,7 @@ class App extends Component {
           <AnonRoute path="/login" component={Login} />
           <PrivateRoute path="/products" component={ProductsList} />
           <PrivateRoute path="/quotes/new" component={CreateQuote} />
+          <PrivateRoute path="/quotes/:id" component={EditQuote} />
           <PrivateRoute path="/quotes" component={Desk} />
         </Switch>
       </AuthProvider>
