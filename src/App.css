@@ -50,3 +50,13 @@
 .button {
   margin: 10px;
 }
+
+.fa-trash{
+  color: red;
+  opacity: 0.5;
+  size: 3x;
+}
+
+.i:hover{
+  color: red;
+}

@@ -6,7 +6,7 @@ import AnonRoute from './components/AnonRoute';
 
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Desk from './pages/Desk';
+import Quotes from './pages/Quotes';
 import ProductsList from './pages/Products-List';
 import CreateQuote from './pages/Create-Quote';
 import EditQuote from './pages/Edit-Quote';
@@ -25,7 +25,7 @@ class App extends Component {
           <PrivateRoute path="/products" component={ProductsList} />
           <PrivateRoute path="/quotes/new" component={CreateQuote} />
           <PrivateRoute path="/quotes/:id" component={EditQuote} />
-          <PrivateRoute path="/quotes" component={Desk} />
+          <PrivateRoute path="/quotes" component={Quotes} />
         </Switch>
       </AuthProvider>
     );

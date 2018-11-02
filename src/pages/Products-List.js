@@ -27,7 +27,7 @@ class ProductsList extends Component {
       case true:
         return <div>
             <Header />
-            Loading Products
+            Loading Products...
           </div>;
       default:
         return (

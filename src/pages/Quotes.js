@@ -6,7 +6,7 @@ import { withAuth } from '../components/AuthProvider';
 import Quote from '../lib/quotes-service';
 
 
-class Desk extends Component {
+class Quotes extends Component {
   state = {
     quotes: [],
     isLoading: true
@@ -41,7 +41,10 @@ class Desk extends Component {
     const { isLoading } = this.state
     switch(isLoading) {
       case true:
-        return <div>Loading Quotes</div>;
+        return <div>
+          <Header/>
+          Loading Quotes...
+          </div>;
         default:
     
     return (
@@ -59,7 +62,7 @@ class Desk extends Component {
                           <div className="card-footer">
                             <Link to={`/quotes/${quote._id}`} className="card-footer-item fas fa-edit">
                             </Link>
-                            <i className="card-footer-item fas fa-trash" onClick={() => this.handleDeleteQuote(quote._id)}>
+                            <i className="card-footer-item fas fa-trash trash" onClick={() => this.handleDeleteQuote(quote._id)}>
                             </i>
                           </div>
                         </div>
@@ -75,4 +78,4 @@ class Desk extends Component {
   }
 }
 
-export default withAuth()(Desk);
+export default withAuth()(Quotes);

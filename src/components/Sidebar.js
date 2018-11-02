@@ -18,7 +18,7 @@ return <div>
     <ul className="menu-list">
       <li>
         <a href="/" className="sb-home">
-          <span className="icon"><i className="fa fa-home"></i></span> Desk
+          <span className="icon"><i className="fa fa-home"></i></span> Quotes
         </a>
       </li>
       <li>

@@ -59,6 +59,7 @@ class EditQuote extends Component {
     const { name, customer_name, customer_address, customer_email, products} = this.state;
     return (
       <div>
+        <Header/>
         <form onSubmit={this.handleSubmit}>
         <input type="text" value={name} name="name" onChange={this.handleOnChange}/>
         <input type="text" value={customer_name} name="customer_name" onChange={this.handleOnChange}/>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import auth from '../lib/auth-service';
+import Header from './Header';
 
 export const AuthContext = React.createContext(
   // authStore // default value
@@ -74,7 +75,11 @@ export default class AuthProvider extends Component {
     const { children } = this.props;
     switch (status) {
       case 'loading':
-        return <div>Loading</div>
+        return <div>
+          {/* Loading General */}
+          <Header/>
+          LOOADING...
+          </div>
       default:
         return (
           <Provider value={{ isLogged, user, logout: this.logoutUser, setUser: this.setUser }}>
