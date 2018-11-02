@@ -60,9 +60,8 @@ class Desk extends Component {
                             <Link to={`/quotes/${quote._id}`} className="card-footer-item">
                               Edit
                             </Link>
-                            <button className="card-footer-item" onClick={() => this.handleDeleteQuote(quote._id)}>
-                              Delete
-                            </button>
+                            <i className="card-footer-item fas fa-trash" onClick={() => this.handleDeleteQuote(quote._id)}>
+                            </i>
                           </div>
                         </div>
                       </div>
