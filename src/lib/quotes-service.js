@@ -24,7 +24,7 @@ class QuotesApi {
     return this.quotesApi.post('/', body);
   }
 
-  deleteProduct(id) {
+  deleteQuote(id) {
     return this.quotesApi.delete(`/${id}`);
   }
 }

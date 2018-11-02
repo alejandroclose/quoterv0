@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import Users from "../lib/user-service";
 import Header from "../components/Header";
 import { withAuth } from '../components/AuthProvider';
+import Quote from '../lib/quotes-service';
 
 
 class Desk extends Component {
@@ -21,6 +22,19 @@ class Desk extends Component {
         });
     })
     .catch(error => console.log("Error!:", error))
+  }
+
+  handleDeleteQuote(id){
+    console.log(id)
+    Quote.deleteQuote(id)
+    .then((data) => {
+      console.log('quote deleted');
+      this.props.history.push('/quotes')
+        window.location.reload()
+    })
+    .catch((err) => {
+      console.log(err);
+    })
   }
 
   render() {
@@ -46,6 +60,9 @@ class Desk extends Component {
                             <Link to={`/quotes/${quote._id}`} className="card-footer-item">
                               Edit
                             </Link>
+                            <button className="card-footer-item" onClick={() => this.handleDeleteQuote(quote._id)}>
+                              Delete
+                            </button>
                           </div>
                         </div>
                       </div>
