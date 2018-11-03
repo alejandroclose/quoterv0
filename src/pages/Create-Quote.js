@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import Quote from '../lib/quotes-service';
 import { withAuth } from '../components/AuthProvider';
 import Header from '../components/Header';
-import ProductPicker from '../components/ProductPicker';
+import QuoteProducts from '../components/QuoteProducts';
 
 class NewQuote extends Component {
   state = {
@@ -11,13 +11,21 @@ class NewQuote extends Component {
     customer_address: '',
     customer_email: '',
     products:[],
-    isLoading: false
+    isLoading: false,
+    numProducts: 0
   }
 
   handleOnChange = (e) => {
     this.setState({
       //seleccionar dinamicamente que coges y cual es su valor
       [e.target.name]: e.target.value,
+    })
+  }
+
+  handleAddProductPicker = (e) => {
+    e.preventDefault();
+    this.setState({
+      numProducts: this.state.numProducts + 1
     })
   }
 
@@ -36,7 +44,8 @@ handleSubmit = (e) => {
 }
 
 render() {
-  const {name, customer_name, customer_address, customer_email, products} = this.state
+  const {name, customer_name, customer_address, customer_email} = this.state
+  const products = [];
 
   return (
     <div>
@@ -47,9 +56,9 @@ render() {
         <input type="text" name="customer_address" onChange={this.handleOnChange} placeholder="Customer Address" />
         <input type="text" name="customer_email" onChange={this.handleOnChange} placeholder="email@quoter.io" />
         <input type="text" name="products" onChange={this.handleOnChange} placeholder="Products" />
-        <ProductPicker/>
         <button type="submit">Save</button>
       </form>
+      <QuoteProducts/>
     </div>
   )
 }

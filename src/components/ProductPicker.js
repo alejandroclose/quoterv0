@@ -27,12 +27,12 @@ class ProductPicker extends Component {
         return <div>Loading Product List...</div>;
       default:
         return (
-          <div class="select is-small">
+          <div className="select is-small">
           <select>
             <option></option>
             {this.state.products.map(product => {
               return(
-                <option>{product.name}</option>
+                <option key={product._id}>{product.name}</option>
               )
             })}
           </select>
