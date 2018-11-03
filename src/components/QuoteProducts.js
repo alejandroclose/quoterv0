@@ -3,16 +3,22 @@ import ProductPicker from './ProductPicker';
 
 class QuoteProducts extends Component {
   state = {
+    productPickers: [],
     products: []
   }
-
   addProductPicker = (e) => {
     e.preventDefault();
     this.setState({
-      products: this.state.products.concat(<ProductPicker/>)
+      productPickers: this.state.productPickers.concat(<ProductPicker/>)
     })
-    console.log(this.state.products);
-    console.log('product picker added')
+    console.log('product picker added');
+    // this.props.sendData()
+  }
+
+  handleOnChange = (e) => {
+    // this.state.products.push(e.target.value)
+    const prod = e.target.value;
+    this.props.sendData(prod);
   }
 
   render() {
@@ -20,9 +26,9 @@ class QuoteProducts extends Component {
       <div>
         <div className="header">
           <form onSubmit={this.addProductPicker}>
-          {this.state.products.map((productPicker, index) => {
+          {this.state.productPickers.map((productPicker, index) => {
             return(
-              <div key={index}>
+              <div key={index} onChange={this.handleOnChange}>
                 {productPicker}
               </div>
             )
