@@ -8,7 +8,7 @@ class CreateQuote extends Component {
   state ={
     products: []
   }
-  handleData = (prod) => {
+  handleProductsData = (prod) => {
     this.state.products.push(prod)
     console.log(this.state.products)
   }
@@ -17,7 +17,7 @@ class CreateQuote extends Component {
       <div>
         <Header/>
         <QuoteInfo/>
-        <QuoteProducts sendData={this.handleData}/>
+        <QuoteProducts sendData={this.handleProductsData}/>
       </div>
     )
   }

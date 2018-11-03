@@ -32,7 +32,7 @@ class ProductPicker extends Component {
             <option></option>
             {this.state.products.map(product => {
               return(
-                <option key={product._id}>{product.name}</option>
+                <option key={product._id}>{product.name}- {product.price}{product.currency}</option>
               )
             })}
           </select>

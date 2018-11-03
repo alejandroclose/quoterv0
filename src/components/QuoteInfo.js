@@ -35,7 +35,6 @@ handleSubmit = (e) => {
 
 render() {
   const {name, customer_name, customer_address, customer_email} = this.state
-  const products = [];
 
   return (
     <div>
@@ -44,7 +43,6 @@ render() {
         <input type="text" name="customer_name" onChange={this.handleOnChange} placeholder="Customer Name" />
         <input type="text" name="customer_address" onChange={this.handleOnChange} placeholder="Customer Address" />
         <input type="text" name="customer_email" onChange={this.handleOnChange} placeholder="email@quoter.io" />
-        <input type="text" name="products" onChange={this.handleOnChange} placeholder="Products" />
         <button type="submit">Save</button>
       </form>
     </div>
