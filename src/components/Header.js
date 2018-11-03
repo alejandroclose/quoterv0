@@ -8,7 +8,7 @@ class Header extends Component {
       <div>
         <nav className="navbar has-shadow" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
-    <Link className="navbar-item" to="/">
+    <Link className="navbar-item" to="/quotes">
     <h1>Quoter</h1>
       <img src={logo} width="30" height="75" alt="quoter logo"/>
     </Link>

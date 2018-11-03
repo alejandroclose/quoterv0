@@ -18,7 +18,6 @@ class EditQuote extends Component {
 
     Quote.getQuote(id)
     .then((data) => {
-      console.log(data)
       const {name, customer_name, customer_address, customer_email, products} = data;
 
       this.setState({
@@ -46,7 +45,6 @@ class EditQuote extends Component {
     const { name, customer_name, customer_address, customer_email} = this.state;
     Quote.editQuote(id, {name, customer_name, customer_address, customer_email})
     .then ((result) => {
-      console.log("da")
       this.props.history.push(`/quotes`)
     })
     .catch((error) => {
@@ -55,7 +53,6 @@ class EditQuote extends Component {
   }
 
   render() {
-    console.log('render state',this.state);
     const { name, customer_name, customer_address, customer_email, products} = this.state;
     return (
       <div>

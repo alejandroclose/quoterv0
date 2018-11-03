@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import Quote from '../lib/quotes-service';
 import { withAuth } from '../components/AuthProvider';
 import Header from '../components/Header';
+import ProductPicker from '../components/ProductPicker';
 
 class NewQuote extends Component {
   state = {
@@ -46,6 +47,7 @@ render() {
         <input type="text" name="customer_address" onChange={this.handleOnChange} placeholder="Customer Address" />
         <input type="text" name="customer_email" onChange={this.handleOnChange} placeholder="email@quoter.io" />
         <input type="text" name="products" onChange={this.handleOnChange} placeholder="Products" />
+        <ProductPicker/>
         <button type="submit">Save</button>
       </form>
     </div>
