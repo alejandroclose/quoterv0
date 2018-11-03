@@ -9,7 +9,7 @@ class EditQuote extends Component {
     customer_name: '',
     customer_address: '',
     customer_email: '',
-    // products:[],
+    products:[],
     isLoading: false
   }
 
@@ -53,7 +53,7 @@ class EditQuote extends Component {
   }
 
   render() {
-    const { name, customer_name, customer_address, customer_email, products} = this.state;
+    const { name, customer_name, customer_address, customer_email} = this.state;
     return (
       <div>
         <Header/>

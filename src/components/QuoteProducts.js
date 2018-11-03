@@ -3,8 +3,7 @@ import ProductPicker from './ProductPicker';
 
 class QuoteProducts extends Component {
   state = {
-    productPickers: [],
-    products: []
+    productPickers: []
   }
   addProductPicker = (e) => {
     this.setState({
