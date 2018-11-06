@@ -76,11 +76,11 @@
 }
 
 .company-logo{
-  margin: 30px;
+  margin: 30px 30px 30px 60px;
   width: 100px;
 }
 .quote-title{
-  margin: 30px;
+  margin: 30px 60px 30px 30px;
   width: 100%;
   font-size: 3em;
   text-align: right;

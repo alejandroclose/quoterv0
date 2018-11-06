@@ -39,7 +39,7 @@ class QuoteProducts extends Component {
   render() {
     return (
       <div>
-        <div className="header">
+        <div className="product-picker">
 
           {this.state.productPickers.map((productPicker, index) => {
             return (<div key={index} onChange={this.handleOnChange}>
