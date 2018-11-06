@@ -22,9 +22,9 @@ class NewQuote extends Component {
 
 render() {
   return (
-    <div>
-        <input type="text" name='name' onChange={this.handleOnChange} placeholder="Name" />
-        <input type="text" name="customer_name" onChange={this.handleOnChange} placeholder="Customer Name" />
+    <div className="customer-info">
+        <input type="text" name='name' onChange={this.handleOnChange} placeholder="Customer Name" />
+        <input type="text" name="customer_name" onChange={this.handleOnChange} placeholder="Company" />
         <input type="text" name="customer_address" onChange={this.handleOnChange} placeholder="Customer Address" />
         <input type="text" name="customer_email" onChange={this.handleOnChange} placeholder="email@quoter.io" />
         {/* <button type="submit">Save Customer Info</button> */}

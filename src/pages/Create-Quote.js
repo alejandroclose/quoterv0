@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import QuoteInfo from '../components/QuoteInfo';
 import QuoteProducts from '../components/QuoteProducts';
 import Quote from '../lib/quotes-service';
+import QuoteSelectedProducts from '../components/QuoteSelectedProducts';
+
 
 class CreateQuote extends Component {
   state ={
@@ -11,27 +13,31 @@ class CreateQuote extends Component {
     customer_name: '',
     customer_address: '',
     customer_email: '',
-    products:[],
+    productsArr:[],
+    productDetail:{},
     isLoading: false
   }
   handleProductsData = (prod) => {
-
-    const product = this.state.products;
-    product.push(prod);
+    const productArr = this.state.productsArr;
+    productArr.push(prod);
 
     this.setState({
-      products: product
+      productsArr: productArr
     })
   }
 
   handleInfoData = (infoState) => {
+    console.log(infoState)
     this.setState({
       name: infoState.name,
       customer_name: infoState.customer_name,
       customer_address: infoState.customer_address,
       customer_email: infoState.customer_email
     })
-    console.log(this.state)
+  }
+
+  handleProductDetail = (product) => {
+    console.log('Product',product)
   }
 
   handleSubmit = (e) => {
@@ -47,15 +53,31 @@ class CreateQuote extends Component {
     })
   }
 
-
   render(){
     console.log(this.state)
     return(
       <div>
         <Header/>
+        <div className="quote-template">
+        <div className="quote-header">
+        <div className="company-logo"><img src="/images/noun_thunder_434559.png"/></div>
+        <div className="quote-title">QUOTE</div>
+        </div>
+        <div className="quote-sub-header">
+        <div className="company-info">
+        <p>THOR SL</p>
+        <p>C/Pamplona 96</p>
+        <p>08018 Barcelona</p>
+        <p>www.thor.cat</p>
+        </div>
+        <div className="quote-info">
         <QuoteInfo sendData={this.handleInfoData}/>
-        <QuoteProducts sendData={this.handleProductsData}/>
+        </div>
+        </div>
+        <QuoteProducts sendData={this.handleProductsData} sendDetail={this.handleProductDetail()}/>
+        <QuoteSelectedProducts prodArr = {this.state.productsArr}/>
         <button onClick={() => this.handleSubmit()}>Save Quote</button>
+        </div>
       </div>
     )
   }

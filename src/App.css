@@ -60,3 +60,50 @@
 .i:hover{
   color: red;
 }
+
+.quote-template{
+  min-height: 500px;
+  margin: 75px 300px 100px 300px;
+  border: 1px solid black;
+
+}
+
+.quote-header{
+  min-height: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.company-logo{
+  margin: 30px;
+  width: 100px;
+}
+.quote-title{
+  margin: 30px;
+  width: 100%;
+  font-size: 3em;
+  text-align: right;
+}
+
+.quote-sub-header{
+  margin: 0 30px 0px 30px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.05px solid grey;
+  padding: 0 0 20px 0;
+}
+
+.company-info{
+  width: 200px;
+  margin: 10px;
+}
+
+.quote-info{
+  width: 250px;
+  margin: 10px;
+}
+
+.customer-info input{
+  width: 100%;
+}
