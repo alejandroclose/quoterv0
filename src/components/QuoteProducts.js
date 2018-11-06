@@ -4,56 +4,41 @@ import Products from "../lib/products-service";
 
 class QuoteProducts extends Component {
   state = {
-    productPickers: [],
-    selectedProduct: ""
-  };
+    products: []
+  }
 
-  addProductPicker = e => {
-    this.setState({
-      productPickers: this.state.productPickers.concat(
-        <ProductPicker sendData={this.handleData} />
-      )
-    });
-  };
+  handleData = data => {
+    this.getProduct(data);
+  }
 
-  handleData = data => {
-    console.log("data", data);
-    this.setState({
-      selectedProduct: data,
-      product: []
-    });
-  };
-
-  handleOnChange = e => {
-    const prod = e.target.value;
-    this.props.sendData(prod);
-  };
-
-  handleDetail = () => {
-    Products.getProduct(this.state.selectedProduct)
-      .then((result) => {
-       this.props.sendDetail(result)
+  getProduct = (id) => {
+    Products.getProduct(id)
+      .then((product)=> {
+        const { products } = this.state;
+        products.push(product)
+        this.setState({
+          products: products,
+        })
       })
   }
 
-  render() {
-    return (
+  render(){
+    
+    return(<div>
       <div>
-        <div className="product-picker">
-
-          {this.state.productPickers.map((productPicker, index) => {
-            return (<div key={index} onChange={this.handleOnChange}>
-                  {productPicker}
-                </div>
-            );
-          })
-          
-          }
-          <button onClick={() => this.addProductPicker()}> Add Product </button>
-        </div>
+        <ProductPicker sendData={this.handleData}/>
       </div>
-    );
+      <div>
+        {this.state.products.map((product)=>{
+          return <li key={product._id}>{product.name}</li>
+        })}
+      </div>
+      <div style={{margin: "20px"}}>
+        {this.state.products.reduce((acc, product) => {
+          return acc + product.price
+        }, 0)}
+      </div>
+    </div>)
   }
 }
-
 export default QuoteProducts;

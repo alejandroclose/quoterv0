@@ -36,10 +36,6 @@ class CreateQuote extends Component {
     })
   }
 
-  handleProductDetail = (product) => {
-    console.log('Product',product)
-  }
-
   handleSubmit = (e) => {
     const {name, customer_name, customer_address, customer_email, products} = this.state
     Quote.crateQuote({name, customer_name, customer_address, customer_email, products})
@@ -54,13 +50,15 @@ class CreateQuote extends Component {
   }
 
   render(){
-    console.log(this.state)
     return(
       <div>
         <Header/>
+        <div className="quote-buttons">
+          <button className="button is-success is-outlined" onClick={() => this.handleSubmit()}>Save Quote</button>
+        </div>
         <div className="quote-template">
         <div className="quote-header">
-        <div className="company-logo"><img src="/images/noun_thunder_434559.png"/></div>
+        <div className="company-logo"><img src="/images/noun_thunder_434559.png" alt="company logo"/></div>
         <div className="quote-title">QUOTE</div>
         </div>
         <div className="quote-sub-header">
@@ -68,15 +66,18 @@ class CreateQuote extends Component {
         <p>THOR SL</p>
         <p>C/Pamplona 96</p>
         <p>08018 Barcelona</p>
-        <p>www.thor.cat</p>
+        <p>www.thor.es</p>
         </div>
         <div className="quote-info">
         <QuoteInfo sendData={this.handleInfoData}/>
         </div>
         </div>
-        <QuoteProducts sendData={this.handleProductsData} sendDetail={this.handleProductDetail()}/>
+        <div className="quote-products">
+        <QuoteProducts sendData={this.handleProductsData}/>
         <QuoteSelectedProducts prodArr = {this.state.productsArr}/>
-        <button onClick={() => this.handleSubmit()}>Save Quote</button>
+        </div>
+        
+        
         </div>
       </div>
     )

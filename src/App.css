@@ -61,9 +61,14 @@
   color: red;
 }
 
+.quote-buttons{
+  margin: 25px 300px 0 300px;
+  text-align: right;
+}
+
 .quote-template{
   min-height: 500px;
-  margin: 75px 300px 100px 300px;
+  margin: 0 300px 100px 300px;
   border: 1px solid black;
 
 }
@@ -106,4 +111,14 @@
 
 .customer-info input{
   width: 100%;
+}
+
+.quote-products{
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.product-picker{
+
 }

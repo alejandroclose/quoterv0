@@ -6,7 +6,8 @@ class ProductPicker extends Component {
   state = {
     products: [],
     isLoading: true,
-    pick: ''
+    pick: "",
+    selectedProduct: null
   };
 
   componentDidMount() {
@@ -15,26 +16,25 @@ class ProductPicker extends Component {
         this.setState({
           products: data,
           isLoading: false,
-          id: [],
         });
       })
       .catch(error => console.error("Product Picker error!:", error));
   }
 
   // picks the id of the selected product and sends it as props.
-  handleOnChange = (e) => {
-  const selectedIndex = e.target.options.selectedIndex;
-  const {id} = this.state
-  const selectedId = e.target.options[selectedIndex].getAttribute('value');
-  id.push(selectedId);
+  handleOnChange = e => {
+    const selectedIndex = e.target.options.selectedIndex;
+    const selectedId = e.target.options[selectedIndex].getAttribute("value");
+    this.setState({
+      selectedProduct: selectedId
+    })
+  };
 
-  this.props.sendData(selectedId)
-  console.log('PP', this.state)
-
+  handleClick = () => {
+    this.props.sendData(this.state.selectedProduct);
   }
-  render() {
 
-    
+  render() {
     const { isLoading } = this.state;
     switch (isLoading) {
       case true:
@@ -45,15 +45,18 @@ class ProductPicker extends Component {
             <select onChange={this.handleOnChange}>
               <option />
               {this.state.products.map(product => {
-                return <option key={product._id} value={ product._id}>{product.name}</option>;
+                return (
+                  <option key={product._id} value={product._id}>
+                    {product.name}
+                  </option>
+                );
               })}
             </select>
+            <button onClick={this.handleClick}>Add</button>
           </div>
         );
-        
     }
   }
-  
 }
 
 export default withAuth()(ProductPicker);
