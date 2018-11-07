@@ -122,3 +122,12 @@
 .product-picker{
 
 }
+
+.quote-product-line{
+
+}
+
+.quote-product-info{
+  display: flex;
+  flex-direction: row;
+}
