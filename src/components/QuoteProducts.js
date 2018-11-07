@@ -33,6 +33,7 @@ class QuoteProducts extends Component {
           return <li key={product._id}>{product.name}</li>
         })}
       </div>
+      {/* Sum of products prices */}
       <div style={{margin: "20px"}}>
         {this.state.products.reduce((acc, product) => {
           return acc + product.price

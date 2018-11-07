@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import QuoteInfo from '../components/QuoteInfo';
 import QuoteProducts from '../components/QuoteProducts';
 import Quote from '../lib/quotes-service';
-import QuoteSelectedProducts from '../components/QuoteSelectedProducts';
 
 
 class CreateQuote extends Component {
@@ -74,7 +73,6 @@ class CreateQuote extends Component {
         </div>
         <div className="quote-products">
         <QuoteProducts sendData={this.handleProductsData}/>
-        <QuoteSelectedProducts prodArr = {this.state.productsArr}/>
         </div>
         
         
