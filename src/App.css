@@ -1,45 +1,44 @@
-.h1{
+.h1 {
   font-weight: bold;
   font-size: 30px;
 }
 
-.navbar-brand{
+.navbar-brand {
   margin-left: 40px;
 }
 
-.column{
+.column {
   border: black;
 }
 
-.test{
+.test {
   margin: 330px;
-
 }
 
-.page-content{
+.page-content {
   display: flex;
   flex-direction: row;
 }
 
-.main-page-content{
+.main-page-content {
   margin: 30px;
 }
 
-.cards-collection{
+.cards-collection {
   display: flex;
   flex-direction: row;
 }
-.card{
+.card {
   width: 150px;
   height: 150px;
   margin: 10px;
 }
 
 .card-footer-item:not(:last-child) {
-  border: 0px solid white !important
+  border: 0px solid white !important;
 }
 
-.content{
+.content {
   min-height: 50px;
 }
 
@@ -51,47 +50,46 @@
   margin: 10px;
 }
 
-.fa-trash{
+.fa-trash {
   color: red;
   opacity: 0.5;
   size: 3x;
 }
 
-.i:hover{
+.i:hover {
   color: red;
 }
 
-.quote-buttons{
+.quote-buttons {
   margin: 25px 300px 0 300px;
   text-align: right;
 }
 
-.quote-template{
+.quote-template {
   min-height: 500px;
   margin: 0 300px 100px 300px;
   border: 1px solid black;
-
 }
 
-.quote-header{
+.quote-header {
   min-height: 150px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.company-logo{
+.company-logo {
   margin: 30px 30px 30px 60px;
   width: 100px;
 }
-.quote-title{
+.quote-title {
   margin: 30px 60px 30px 30px;
   width: 100%;
   font-size: 3em;
   text-align: right;
 }
 
-.quote-sub-header{
+.quote-sub-header {
   margin: 0 30px 0px 30px;
   display: flex;
   flex-direction: row;
@@ -99,35 +97,54 @@
   padding: 0 0 20px 0;
 }
 
-.company-info{
+.company-info {
   width: 200px;
   margin: 10px;
 }
 
-.quote-info{
+.quote-info {
   width: 250px;
   margin: 10px;
 }
 
-.customer-info input{
+.customer-info input {
   width: 100%;
 }
 
-.quote-products{
+.quote-products {
   margin: 30px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+}
+
+.product-picker {
+}
+
+
+.quote-product-line {
+  width: 650px;
+  height: 50px;
+  margin: 10px;
+  padding: 5px;
+  border: 0.5px solid grey;
+  list-style-type: none;
   display: flex;
   flex-direction: row;
 }
 
-.product-picker{
-
+.quote-product-info {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
 }
 
-.quote-product-line{
-
+.quote-product-image{
+  width: 40px;
 }
 
-.quote-product-info{
+.quote-product-price{
   display: flex;
   flex-direction: row;
 }

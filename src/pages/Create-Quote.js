@@ -20,13 +20,14 @@ class CreateQuote extends Component {
     const productArr = this.state.productsArr;
     productArr.push(prod);
 
+    console.log(productArr)
+
     this.setState({
       productsArr: productArr
     })
   }
 
   handleInfoData = (infoState) => {
-    console.log(infoState)
     this.setState({
       name: infoState.name,
       customer_name: infoState.customer_name,
@@ -36,8 +37,8 @@ class CreateQuote extends Component {
   }
 
   handleSubmit = (e) => {
-    const {name, customer_name, customer_address, customer_email, products} = this.state
-    Quote.crateQuote({name, customer_name, customer_address, customer_email, products})
+    const {name, customer_name, customer_address, customer_email, productsArr} = this.state
+    Quote.crateQuote({name, customer_name, customer_address, customer_email, productsArr})
     .then((result) => {
       console.log('createQuote', result);
       this.props.history.push(`/quotes`)
@@ -49,6 +50,7 @@ class CreateQuote extends Component {
   }
 
   render(){
+    console.log(this.state)
     return(
       <div>
         <Header/>
