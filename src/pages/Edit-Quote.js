@@ -3,7 +3,6 @@ import Quote from "../lib/quotes-service";
 import { withAuth } from "../components/AuthProvider";
 import Header from "../components/Header";
 import Products from "../lib/products-service";
-import QuoteProducts from '../components/QuoteProducts';
 
 class EditQuote extends Component {
   state = {
@@ -75,14 +74,11 @@ class EditQuote extends Component {
   handleData = () => {
     this.state.productsArr.map(id => {
       this.getProduct(id);
-      return console.log("hola");
     });
   };
 
   getProduct = id => {
-    console.log("id", id);
     Products.getProduct(id).then(product => {
-      console.log("product", product);
       const { products } = this.state;
       const newProducts = products;
       newProducts.push(product);
@@ -120,7 +116,7 @@ class EditQuote extends Component {
     } = this.state;
     return (
       <div>
-        <Header />
+        <Header/>
         <div className="quote-buttons">
           <button
             className="button is-success is-outlined"
@@ -174,18 +170,17 @@ class EditQuote extends Component {
           </div>
           <div className="quote-products">
             <ul>
-              {console.log("desde view", this.state.productsArr)}
-              {console.log(this.state.products)}
               {this.showProducts}
               {this.state.products.map((product, index) => {
-                console.log(product);
                 return (
                   <li className="quote-product-line" key={index}>
                     <div className="quote-product-info">
+                    <div>
                       <div className="quote-product-image media-left">
                         <img src={product.image} alt="product badge" />
                       </div>
                       <div>{product.name}</div>
+                      </div>
                       <div className="quote-product-price">
                         <div>{product.price}</div>
                         <div>{product.currency}</div>

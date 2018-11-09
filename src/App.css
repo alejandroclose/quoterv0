@@ -132,12 +132,15 @@
   list-style-type: none;
   display: flex;
   flex-direction: row;
+
 }
 
 .quote-product-info {
+  width: 650px;
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
+  text-align: center;
+  justify-content: space-between;
 }
 
 .quote-product-image{
