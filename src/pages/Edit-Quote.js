@@ -116,7 +116,7 @@ class EditQuote extends Component {
     } = this.state;
     return (
       <div>
-        <Header/>
+        <Header />
         <div className="quote-buttons">
           <button
             className="button is-success is-outlined"
@@ -175,11 +175,11 @@ class EditQuote extends Component {
                 return (
                   <li className="quote-product-line" key={index}>
                     <div className="quote-product-info">
-                    <div>
-                      <div className="quote-product-image media-left">
-                        <img src={product.image} alt="product badge" />
-                      </div>
-                      <div>{product.name}</div>
+                      <div className="quote-product-media">
+                        <div className="quote-product-image media-left">
+                          <img src={product.image} alt="product badge" />
+                        </div>
+                        <div className="quote-product-name">{product.name}</div>
                       </div>
                       <div className="quote-product-price">
                         <div>{product.price}</div>

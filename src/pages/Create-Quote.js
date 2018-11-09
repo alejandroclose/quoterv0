@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import QuoteInfo from '../components/QuoteInfo';
 import QuoteProducts from '../components/QuoteProducts';
 import Quote from '../lib/quotes-service';
+import Products from "../lib/products-service";
 
 
 class CreateQuote extends Component {
@@ -13,7 +14,7 @@ class CreateQuote extends Component {
     customer_address: '',
     customer_email: '',
     productsArr:[],
-    productDetail:{},
+    productDetail:[],
     isLoading: false
   }
   handleProductsData = (prod) => {
@@ -24,6 +25,20 @@ class CreateQuote extends Component {
 
     this.setState({
       productsArr: productArr
+    })
+  }
+
+  
+
+  handleProductsDetail = (id) => {
+    Products.getProduct(id).then(product => {
+      const { productDetail } = this.state;
+      productDetail.push(product);
+      this.setState({
+        productDetail: productDetail
+      })
+
+
     })
   }
 
@@ -76,6 +91,7 @@ class CreateQuote extends Component {
         <div className="quote-products">
         <QuoteProducts sendData={this.handleProductsData}/>
         </div>
+
         
         
         </div>

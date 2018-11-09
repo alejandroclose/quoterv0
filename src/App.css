@@ -112,26 +112,51 @@
 }
 
 .quote-products {
+  height: 650px;
   margin: 30px;
+  padding: 0 50px;
   display: flex;
   flex-direction: row;
-  align-content: center;
+  text-align: end;
+  
 
 }
 
-.product-picker {
+.product-picker{
+  margin: 0 auto;
+  width: 650px;
 }
 
+.product-picker-button {
+  width:100%;
+  text-align: end;
+}
 
+select{
+  padding-right: 24.3em !important;
+}
+
+.select{
+  max-width: 150% !important;
+}
+
+.select-default{
+  width: 650px;
+}
+
+.quote-porduct-list{
+  width: 650px;
+}
 .quote-product-line {
   width: 650px;
   height: 50px;
-  margin: 10px;
+  margin: 10px 0 10px 0;
   padding: 5px;
   border: 0.5px solid grey;
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  align-content: center;
 
 }
 
@@ -141,13 +166,27 @@
   flex-direction: row;
   text-align: center;
   justify-content: space-between;
+  align-items: center;
+}
+
+.quote-product-media{
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  align-items: center;
 }
 
 .quote-product-image{
   width: 40px;
 }
 
+.quote-product-name{
+  width: 450px;
+  text-align: left;
+}
+
 .quote-product-price{
   display: flex;
   flex-direction: row;
+  margin: 20px;
 }

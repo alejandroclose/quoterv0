@@ -15,7 +15,7 @@ class ProductPicker extends Component {
       .then(data => {
         this.setState({
           products: data,
-          isLoading: false,
+          isLoading: false
         });
       })
       .catch(error => console.error("Product Picker error!:", error));
@@ -27,12 +27,12 @@ class ProductPicker extends Component {
     const selectedId = e.target.options[selectedIndex].getAttribute("value");
     this.setState({
       selectedProduct: selectedId
-    })
+    });
   };
 
   handleClick = () => {
     this.props.sendData(this.state.selectedProduct);
-  }
+  };
 
   render() {
     const { isLoading } = this.state;
@@ -41,9 +41,9 @@ class ProductPicker extends Component {
         return <div>Loading Product List...</div>;
       default:
         return (
-          <div className="select is-small">
-            <select onChange={this.handleOnChange}>
-              <option />
+          <div className="select is-medium">
+            <select className="select" onChange={this.handleOnChange}>
+              <option className="select-default" selected="selected">Select a product</option>
               {this.state.products.map(product => {
                 return (
                   <option key={product._id} value={product._id}>
@@ -52,7 +52,9 @@ class ProductPicker extends Component {
                 );
               })}
             </select>
-            <button onClick={this.handleClick}>Add</button>
+            <div className="product-picker-button">
+            <button className="button is-small is-outlined is-success" onClick={this.handleClick}><span className="icon is-small"><i className="fas fa-plus"></i></span><span>Add Product</span></button>
+            </div>
           </div>
         );
     }
