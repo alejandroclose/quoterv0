@@ -51,19 +51,21 @@ class EditQuote extends Component {
   };
 
   handleSubmit = e => {
-    e.preventDefault();
     const { id } = this.props.match.params;
     const {
       name,
       customer_name,
       customer_address,
-      customer_email
+      customer_email,
+      productsArr
     } = this.state;
+
     Quote.editQuote(id, {
       name,
       customer_name,
       customer_address,
-      customer_email
+      customer_email,
+      productsArr
     })
       .then(result => {
         this.props.history.push(`/quotes`);
@@ -81,7 +83,9 @@ class EditQuote extends Component {
 
   
   getProduct = id => {
+ 
     Products.getProduct(id).then(product => {
+      console.log(product)
       const { products } = this.state;
       const newProducts = products;
       newProducts.push(product);
@@ -102,6 +106,15 @@ class EditQuote extends Component {
       this.setState({
         products: products
       })
+      this.getNewId(id)
+    })
+  }
+
+  getNewId = (id) => {
+    const { productsArr } = this.state;
+    productsArr.push(id);
+    this.setState({
+      productsArr: productsArr
     })
   }
 
@@ -122,6 +135,22 @@ class EditQuote extends Component {
         </li>
       );
     });
+  };
+
+  /* Sum of product's price */
+  calculateSubtotal = products => {
+    return (products.reduce((acc, product) => {
+      const pretax = acc + product.price;
+      return pretax;
+    }, 0)).toFixed(2);
+  };
+
+  calculateVAT = products => {
+    return (this.calculateSubtotal(products) * 0.21).toFixed(2);
+  };
+
+  calculateTotal = products => {
+    return (this.calculateSubtotal(products) * 1.21).toFixed(2);
   };
 
   render() {
@@ -210,11 +239,34 @@ class EditQuote extends Component {
             <div className="quote-edit-product-picker">
             <ProductPicker sendData={this.handlePickerData}/>
             </div>
+            <br />
+          <hr />
+          <div className="quote-product-total">
+            <div className="quote-product-subtotal">
+              <span className="quote-product-subtotal-title">SUBTOTAL</span>
+              <span className="quote-product-subtotal-value">
+                {this.calculateSubtotal(this.state.products)}€
+              </span>
+            </div>
+            <div className="quote-product-vat">
+              <span className="quote-product-vat-title">VAT 21%</span>
+              <span className="quote-product-vat-value">
+                {this.calculateVAT(this.state.products)}€
+              </span>
+            </div>
+            <hr />
+            <div className="quote-product-checkout">
+              <span className="quote-product-checkout-title">TOTAL</span>
+              <span className="quote-product-checkout-value">
+                {this.calculateTotal(this.state.products)}€
+              </span>
+            </div>
+          </div>
           </div>
           
         </div>
 
-        {/* <Header/>
+        {/* 
         <form onSubmit={this.handleSubmit}>
         <input type="text" value={name} name="name" onChange={this.handleOnChange}/>
         <input type="text" value={customer_name} name="customer_name" onChange={this.handleOnChange}/>
