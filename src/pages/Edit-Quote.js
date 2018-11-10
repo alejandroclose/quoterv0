@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Quote from "../lib/quotes-service";
+import Products from "../lib/products-service";
 import { withAuth } from "../components/AuthProvider";
 import Header from "../components/Header";
-import Products from "../lib/products-service";
+import ProductPicker from "../components/ProductPicker";
+
 
 class EditQuote extends Component {
   state = {
@@ -73,10 +75,11 @@ class EditQuote extends Component {
 
   handleData = () => {
     this.state.productsArr.map(id => {
-      this.getProduct(id);
+      return this.getProduct(id);
     });
   };
 
+  
   getProduct = id => {
     Products.getProduct(id).then(product => {
       const { products } = this.state;
@@ -87,6 +90,20 @@ class EditQuote extends Component {
       });
     });
   };
+  
+  handlePickerData = data => {
+    this.getNewProduct(data);
+  }
+
+  getNewProduct = id => {
+    Products.getProduct(id).then(product => {
+      const { products } = this.state;
+      products.push(product);
+      this.setState({
+        products: products
+      })
+    })
+  }
 
   showProducts = () => {
     this.state.products.map((product, index) => {
@@ -169,8 +186,8 @@ class EditQuote extends Component {
             </div>
           </div>
           <div className="quote-products">
+              {this.showProducts()}
             <ul>
-              {this.showProducts}
               {this.state.products.map((product, index) => {
                 return (
                   <li className="quote-product-line" key={index}>
@@ -190,7 +207,11 @@ class EditQuote extends Component {
                 );
               })}
             </ul>
+            <div className="quote-edit-product-picker">
+            <ProductPicker sendData={this.handlePickerData}/>
+            </div>
           </div>
+          
         </div>
 
         {/* <Header/>

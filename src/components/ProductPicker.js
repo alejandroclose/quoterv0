@@ -46,7 +46,7 @@ class ProductPicker extends Component {
         return <div>Loading Product List...</div>;
       default:
         return (
-          <div className="select is-primary is-medium">
+          <div className="select is-primary is-medium is-fullwidth">
             <select value={this.state.value} onChange={this.handleOnChange}>
               <option className="select-default" >Select a product</option>
               {this.state.products.map(product => {
