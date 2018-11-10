@@ -21,8 +21,6 @@ class CreateQuote extends Component {
     const productArr = this.state.productsArr;
     productArr.push(prod);
 
-    console.log(productArr)
-
     this.setState({
       productsArr: productArr
     })
@@ -55,7 +53,6 @@ class CreateQuote extends Component {
     const {name, customer_name, customer_address, customer_email, productsArr} = this.state
     Quote.crateQuote({name, customer_name, customer_address, customer_email, productsArr})
     .then((result) => {
-      console.log('createQuote', result);
       this.props.history.push(`/quotes`)
       window.location.reload()
     })
@@ -65,7 +62,6 @@ class CreateQuote extends Component {
   }
 
   render(){
-    console.log(this.state)
     return(
       <div>
         <Header/>

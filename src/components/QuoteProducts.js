@@ -4,11 +4,8 @@ import Products from "../lib/products-service";
 
 class QuoteProducts extends Component {
   state = {
-    products: [],
-    prices:[]
+    products: []
   };
-
-
 
   handleData = data => {
     this.getProduct(data);
@@ -25,9 +22,25 @@ class QuoteProducts extends Component {
     });
   };
 
+  /* Sum of product's price */
+  calculateSubtotal = products => {
+    return (products.reduce((acc, product) => {
+      const pretax = acc + product.price;
+      return pretax;
+    }, 0)).toFixed(2);
+  };
 
+  calculateVAT = products => {
+    return (this.calculateSubtotal(products) * 0.21).toFixed(2);
+  };
+
+  calculateTotal = products => {
+    return (this.calculateSubtotal(products) * 1.21).toFixed(2);
+  };
 
   render() {
+    console.log("stateQPP", this.state);
+
     return (
       <div className="quote-products-component-div">
         {/* Products returned after using the product picker */}
@@ -57,22 +70,27 @@ class QuoteProducts extends Component {
           <div className="product-picker">
             <ProductPicker sendData={this.handleData} />
           </div>
-          <br/>
+          <br />
           <hr />
           <div className="quote-product-total">
-          <div className="quote-product-vat">
-          VAT 21% {this.state.products.reduce((acc, product) => {
-            this.handlePretax()
-            }, 0)}€
-          </div>
-          <hr/>
-          {/* Sum of product's price */}
+            <div className="quote-product-subtotal">
+              <span className="quote-product-subtotal-title">SUBTOTAL</span>
+              <span className="quote-product-subtotal-value">
+                {this.calculateSubtotal(this.state.products)}€
+              </span>
+            </div>
+            <div className="quote-product-vat">
+              <span className="quote-product-vat-title">VAT 21%</span>
+              <span className="quote-product-vat-value">
+                {this.calculateVAT(this.state.products)}€
+              </span>
+            </div>
+            <hr />
             <div className="quote-product-checkout">
-            TOTAL {this.state.products.reduce((acc, product) => {
-              const pretax = acc + product.price;
-              const total = (pretax * 1.21).toFixed(2);
-              return total;
-            }, 0)}€
+              <span className="quote-product-checkout-title">TOTAL</span>
+              <span className="quote-product-checkout-value">
+                {this.calculateTotal(this.state.products)}€
+              </span>
             </div>
           </div>
         </div>

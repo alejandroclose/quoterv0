@@ -43,7 +43,7 @@ class ProductPicker extends Component {
         return (
           <div className="select is-medium">
             <select className="select" onChange={this.handleOnChange}>
-              <option className="select-default" selected="selected">Select a product</option>
+              <option className="select-default" value="selected">Select a product</option>
               {this.state.products.map(product => {
                 return (
                   <option key={product._id} value={product._id}>
