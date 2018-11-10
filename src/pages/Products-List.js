@@ -37,7 +37,6 @@ class ProductsList extends Component {
               <div className="main-page-content">
                 <ul className="cards-collection">
                   {this.state.products.map(product => {
-                    console.log(product);
                     return (
                       <div className="card" key={product._id}>
                         <div className="card-content">

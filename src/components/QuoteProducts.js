@@ -7,6 +7,11 @@ class QuoteProducts extends Component {
     products: []
   };
 
+  handleDelete(event){
+    const { products } = this.state;
+    products.splice(event,1)
+  }
+
   handleData = data => {
     this.getProduct(data);
   };
@@ -39,7 +44,6 @@ class QuoteProducts extends Component {
   };
 
   render() {
-    console.log("stateQPP", this.state);
 
     return (
       <div className="quote-products-component-div">
@@ -60,6 +64,7 @@ class QuoteProducts extends Component {
                       <div>{product.price}</div>
                       <div>{product.currency}</div>
                     </div>
+                  <div><button onClick={this.handleDelete}>Delete</button></div>
                   </div>
                 </li>
               );

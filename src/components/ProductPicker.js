@@ -40,11 +40,11 @@ class ProductPicker extends Component {
   };
 
   render() {
-    const { isLoading } = this.state;
-    switch (isLoading) {
-      case true:
-        return <div>Loading Product List...</div>;
-      default:
+    // const { isLoading } = this.state;
+    // switch (isLoading) {
+    //   case true:
+    //     return <div>Loading Products...</div>;
+    //   default:
         return (
           <div className="select is-primary is-medium is-fullwidth">
             <select value={this.state.value} onChange={this.handleOnChange}>
@@ -62,7 +62,7 @@ class ProductPicker extends Component {
             </div>
           </div>
         );
-    }
+    // }
   }
 }
 

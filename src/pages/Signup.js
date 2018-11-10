@@ -22,7 +22,7 @@ class Signup extends Component {
         });
         this.props.setUser(user)
       })
-      .catch( error => console.log(error) )
+      .catch( error => console.error(error) )
   }
 
   handleChange = (event) => {  

@@ -21,7 +21,7 @@ class Quotes extends Component {
           isLoading: false
         });
     })
-    .catch(error => console.log("Error!:", error))
+    .catch(error => console.error("Error!:", error))
   }
 
   handleDeleteQuote(id){
@@ -31,7 +31,7 @@ class Quotes extends Component {
         window.location.reload()
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
     })
   }
 

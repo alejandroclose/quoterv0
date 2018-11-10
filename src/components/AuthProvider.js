@@ -49,7 +49,7 @@ export default class AuthProvider extends Component {
           user: {},
         });
       })
-      .catch( error => console.log(error))
+      .catch( error => console.error(error))
   }
 
   componentDidMount() {
@@ -78,7 +78,7 @@ export default class AuthProvider extends Component {
         return <div>
           {/* Loading General */}
           <Header/>
-          LOOADING...
+          LOADING...
           </div>
       default:
         return (

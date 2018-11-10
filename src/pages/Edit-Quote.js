@@ -14,7 +14,7 @@ class EditQuote extends Component {
     customer_email: "",
     productsArr: [],
     products: [],
-    isLoading: false
+    isLoading: true
   };
 
   componentDidMount = () => {
@@ -35,7 +35,8 @@ class EditQuote extends Component {
           customer_name: customer_name || "",
           customer_address: customer_address || "",
           customer_email: customer_email || "",
-          productsArr: products || []
+          productsArr: products || [],
+          isLoading:false
         });
         this.handleData();
       })
@@ -85,7 +86,6 @@ class EditQuote extends Component {
   getProduct = id => {
  
     Products.getProduct(id).then(product => {
-      console.log(product)
       const { products } = this.state;
       const newProducts = products;
       newProducts.push(product);
@@ -160,6 +160,16 @@ class EditQuote extends Component {
       customer_address,
       customer_email
     } = this.state;
+
+    const { isLoading } = this.state;
+    switch (isLoading) {
+      case true:
+        return <div>
+          <Header/>
+          Loading Quote...</div>;
+      default:
+    
+
     return (
       <div>
         <Header />
@@ -276,6 +286,7 @@ class EditQuote extends Component {
         </form> */}
       </div>
     );
+  }
   }
 }
 

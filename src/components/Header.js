@@ -51,11 +51,4 @@ class Header extends Component {
     )
   }
 }
-
-// const Header = (props) => {
-//   console.log(props);
-//   return <div>    
-//         </div>
-
-// }
 export default Header
