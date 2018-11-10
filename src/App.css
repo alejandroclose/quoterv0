@@ -117,9 +117,7 @@
   padding: 0 50px;
   display: flex;
   flex-direction: row;
-  text-align: end;
-  
-
+  text-align: end; 
 }
 
 .product-picker{
@@ -152,7 +150,7 @@ select{
   height: 50px;
   margin: 10px 0 10px 0;
   padding: 5px;
-  border-bottom: 0.5px dotted grey;
+  border-bottom: 0.5px solid grey;
   list-style-type: none;
   display: flex;
   flex-direction: row;

@@ -46,8 +46,8 @@ class ProductPicker extends Component {
         return <div>Loading Product List...</div>;
       default:
         return (
-          <div className="select is-medium">
-            <select className="select is-outlined is-success" value={this.state.value} onChange={this.handleOnChange}>
+          <div className="select is-primary is-medium">
+            <select value={this.state.value} onChange={this.handleOnChange}>
               <option className="select-default" >Select a product</option>
               {this.state.products.map(product => {
                 return (
@@ -58,7 +58,7 @@ class ProductPicker extends Component {
               })}
             </select>
             <div className="product-picker-button">
-            <button className="button is-small is-outlined is-success" onClick={this.handleClick}><span className="icon is-small"><i className="fas fa-plus"></i></span><span>Add Product</span></button>
+            <button className="button is-small is-outlined is-primary" onClick={this.handleClick}><span className="icon is-small"><i className="fas fa-plus"></i></span><span>Add Product</span></button>
             </div>
           </div>
         );
