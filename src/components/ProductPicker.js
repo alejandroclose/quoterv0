@@ -7,7 +7,8 @@ class ProductPicker extends Component {
     products: [],
     isLoading: true,
     pick: "",
-    selectedProduct: null
+    selectedProduct: null,
+    value: "defaultValue"
   };
 
   componentDidMount() {
@@ -26,12 +27,16 @@ class ProductPicker extends Component {
     const selectedIndex = e.target.options.selectedIndex;
     const selectedId = e.target.options[selectedIndex].getAttribute("value");
     this.setState({
-      selectedProduct: selectedId
+      selectedProduct: selectedId,
+      value: e.target.value
     });
   };
 
   handleClick = () => {
     this.props.sendData(this.state.selectedProduct);
+    this.setState({
+      value: "defaultValue"
+    })
   };
 
   render() {
@@ -42,8 +47,8 @@ class ProductPicker extends Component {
       default:
         return (
           <div className="select is-medium">
-            <select className="select" onChange={this.handleOnChange}>
-              <option className="select-default" value="selected">Select a product</option>
+            <select className="select is-outlined is-success" value={this.state.value} onChange={this.handleOnChange}>
+              <option className="select-default" >Select a product</option>
               {this.state.products.map(product => {
                 return (
                   <option key={product._id} value={product._id}>
