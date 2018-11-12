@@ -10,6 +10,7 @@ import Quotes from './pages/Quotes';
 import ProductsList from './pages/Products-List';
 import CreateQuote from './pages/Create-Quote';
 import EditQuote from './pages/Edit-Quote';
+import PublicQuote from './pages/Public-Quote'
 import AuthProvider from './components/AuthProvider';
 
 import './App.css';
@@ -26,6 +27,7 @@ class App extends Component {
           <PrivateRoute path="/quotes/new" component={CreateQuote} />
           <PrivateRoute path="/quotes/:id" component={EditQuote} />
           <PrivateRoute path="/quotes" component={Quotes} />
+          <AnonRoute path="/quote/:id" component={PublicQuote} />
         </Switch>
       </AuthProvider>
     );

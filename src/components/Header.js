@@ -3,7 +3,12 @@ import logo from "../logo_1.png";
 import { Link } from "react-router-dom";
 
 class Header extends Component {
+
+  handleLogout = () => {
+    console.log('logout')
+  }
   render() {
+
     return (
       <div>
         <nav
@@ -40,13 +45,15 @@ class Header extends Component {
             <div className="navbar-end">
               <div className="navbar-item">
                 <div className="navbar-item has-dropdown is-hoverable">
-                  <div className="navbar-link">More</div>
+                  <div className="navbar-link">
+
+                  </div>
 
                   <div className="navbar-dropdown is-right">
                     <div className="navbar-item">User Profile</div>
                     <div className="navbar-item">Business Profile</div>
                     <hr className="navbar-divider" />
-                    <div className="navbar-item">Sign Out</div>
+                    <div className="navbar-item">Logout</div>
                   </div>
                 </div>
               </div>

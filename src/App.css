@@ -69,6 +69,7 @@
   min-height: 400px;
   margin: 0 300px 100px 300px;
   border: 1px solid black;
+  background-color: white;
 }
 
 .quote-header {
@@ -207,4 +208,9 @@ select{
 .quote-product-checkout-title{
   margin: 0 10px;
   width: 90px;
+}
+
+.public-quote{
+  background-color: #e2e3e5;
+  padding: 50px 0 0 0;
 }
