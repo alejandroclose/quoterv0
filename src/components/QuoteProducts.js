@@ -7,11 +7,6 @@ class QuoteProducts extends Component {
     products: []
   };
 
-  handleDelete(event){
-    const { products } = this.state;
-    products.splice(event,1)
-  }
-
   handleData = data => {
     this.getProduct(data);
   };
@@ -26,6 +21,14 @@ class QuoteProducts extends Component {
       this.props.sendData(id);
     });
   };
+
+  handleDelete = (event) =>{
+    const { products } = this.state;
+    products.splice(this.index,1);
+    this.setState ({
+      products: products
+    })
+  }
 
   /* Sum of product's price */
   calculateSubtotal = products => {
@@ -64,7 +67,7 @@ class QuoteProducts extends Component {
                       <div>{product.price}</div>
                       <div>{product.currency}</div>
                     </div>
-                  <div><button onClick={this.handleDelete}>Delete</button></div>
+                  <div><button className="button is-small" onClick={this.handleDelete}>Delete</button></div>
                   </div>
                 </li>
               );
