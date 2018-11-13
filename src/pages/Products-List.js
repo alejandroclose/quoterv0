@@ -33,7 +33,7 @@ class ProductsList extends Component {
         );
       default:
         return (
-          <div>
+          <div className="products-list">
             <Header />
             <div className="page-content">
               <div className="main-page-content">

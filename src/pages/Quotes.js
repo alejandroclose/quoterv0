@@ -45,7 +45,7 @@ class Quotes extends Component {
         );
       default:
         return (
-          <div>
+          <div className="quotes-list">
             <Header />
             <div className="page-content">
               <div className="main-page-content">

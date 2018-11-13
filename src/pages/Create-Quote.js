@@ -58,7 +58,7 @@ class CreateQuote extends Component {
 
   render() {
     return (
-      <div>
+      <div class="create-quote">
         <Header />
         <div className="quote-buttons">
           <button

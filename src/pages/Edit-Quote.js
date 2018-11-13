@@ -171,7 +171,7 @@ class EditQuote extends Component {
     
 
     return (
-      <div>
+      <div class="edit-quote">
         <Header />
         <div className="quote-buttons">
           <button
