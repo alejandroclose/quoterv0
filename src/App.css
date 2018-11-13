@@ -24,6 +24,14 @@
   margin: 30px;
 }
 
+.page-header {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  align-items: baseline;
+  margin: 0 0 10px 30px;
+}
+
 .cards-collection {
   display: flex;
   flex-direction: row;
@@ -211,24 +219,24 @@ select{
 }
 
 .public-quote{
-  background-color: #e2e3e5;
+  background-color: #f7f7f7;
   padding: 50px 0 0 0;
 }
 
 .create-quote {
-  background-color: #e2e3e5;
+  background-color: #f7f7f7;
 }
 
 .edit-quote{
-  background-color: #e2e3e5;
+  background-color: #f7f7f7;
 }
 
 .quotes-list{
   height: 750px;
-  background-color: #e2e3e5;
+  background-color: #f7f7f7;
 }
 
 .products-list{
   height: 750px;
-  background-color: #e2e3e5;
+  background-color: #f7f7f7;
 }

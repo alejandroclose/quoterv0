@@ -49,13 +49,15 @@ class Quotes extends Component {
             <Header />
             <div className="page-content">
               <div className="main-page-content">
+              <div className="page-header">
                 <h1>My Quotes</h1>
                 <Link
-                  className="button is-success is-outlined"
+                  className="button is-success is-outlined is small"
                   to="/quotes/new"
                 >
                   Add Quote
                 </Link>
+                </div>
                 <ul className="cards-collection">
                   {this.state.quotes.map(quote => {
                     return (
