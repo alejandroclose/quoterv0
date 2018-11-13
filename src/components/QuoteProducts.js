@@ -22,6 +22,14 @@ class QuoteProducts extends Component {
     });
   };
 
+  handleDelete = (event) =>{
+    const { products } = this.state;
+    products.splice(this.index,1);
+    this.setState ({
+      products: products
+    })
+  }
+
   /* Sum of product's price */
   calculateSubtotal = products => {
     return (products.reduce((acc, product) => {
@@ -39,7 +47,6 @@ class QuoteProducts extends Component {
   };
 
   render() {
-    console.log("stateQPP", this.state);
 
     return (
       <div className="quote-products-component-div">
@@ -60,6 +67,7 @@ class QuoteProducts extends Component {
                       <div>{product.price}</div>
                       <div>{product.currency}</div>
                     </div>
+                  <div><button className="delete is-small" onClick={this.handleDelete}></button></div>
                   </div>
                 </li>
               );

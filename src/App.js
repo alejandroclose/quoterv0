@@ -6,10 +6,12 @@ import AnonRoute from './components/AnonRoute';
 
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Quotes from './pages/Quotes';
 import ProductsList from './pages/Products-List';
+import CreateProduct from './pages/Create-Product'
+import Quotes from './pages/Quotes';
 import CreateQuote from './pages/Create-Quote';
 import EditQuote from './pages/Edit-Quote';
+import PublicQuote from './pages/Public-Quote'
 import AuthProvider from './components/AuthProvider';
 
 import './App.css';
@@ -22,10 +24,12 @@ class App extends Component {
         <Switch>
           <AnonRoute path="/signup" component={Signup} />
           <AnonRoute path="/login" component={Login} />
+          <PrivateRoute path="/products/new" component={CreateProduct} />
           <PrivateRoute path="/products" component={ProductsList} />
           <PrivateRoute path="/quotes/new" component={CreateQuote} />
           <PrivateRoute path="/quotes/:id" component={EditQuote} />
           <PrivateRoute path="/quotes" component={Quotes} />
+          <AnonRoute path="/quote/:id" component={PublicQuote} />
         </Switch>
       </AuthProvider>
     );

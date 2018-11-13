@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Users from "../lib/user-service.js"
+import Users from "../lib/user-service.js";
 import Header from "../components/Header";
-import { withAuth } from '../components/AuthProvider';
-import {Link} from 'react-router-dom';
+import { withAuth } from "../components/AuthProvider";
+import { Link } from "react-router-dom";
 
 class ProductsList extends Component {
   state = {
@@ -21,29 +21,34 @@ class ProductsList extends Component {
   }
 
   render() {
-    const {isLoading} = this.state;
+    const { isLoading } = this.state;
 
     switch (isLoading) {
       case true:
-        return <div>
-            <Header />
-            Loading Products...
-          </div>;
-      default:
         return (
           <div>
             <Header />
+            Loading Products...
+          </div>
+        );
+      default:
+        return (
+          <div className="products-list">
+            <Header />
             <div className="page-content">
               <div className="main-page-content">
+                <h1>My Products</h1>
                 <ul className="cards-collection">
                   {this.state.products.map(product => {
-                    console.log(product);
                     return (
                       <div className="card" key={product._id}>
                         <div className="card-content">
                           <div className="content">{product.name}</div>
                           <div className="card-footer">
-                            <Link to={`/products/${product._id}`} className="card-footer-item">
+                            <Link
+                              to={`/products/${product._id}`}
+                              className="card-footer-item"
+                            >
                               Edit
                             </Link>
                           </div>
@@ -60,4 +65,4 @@ class ProductsList extends Component {
   }
 }
 
-export default withAuth() (ProductsList);
+export default withAuth()(ProductsList);
