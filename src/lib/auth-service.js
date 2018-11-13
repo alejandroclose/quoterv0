@@ -1,9 +1,10 @@
 import axios from 'axios';
+require('dotenv').config();
 
 class Auth {
   constructor() {
     this.auth = axios.create({
-      baseURL: 'http://localhost:5000',
+      baseURL: `${process.env.HEROKU_URI}`,
       withCredentials: true
     })
   }
