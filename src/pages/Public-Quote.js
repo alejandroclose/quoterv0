@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import QuoteInfo from "../components/QuoteInfo";
+import PrivateQuote from "../lib/public-quotes-service";
+import PublicProducts from "../lib/public-products-service";
 
 class PublicQuote extends Component {
   state= {
@@ -13,9 +14,69 @@ class PublicQuote extends Component {
 
   componentDidMount = () => {
     const { id } = this.props.match.params;
-    console.log(id)
+    PrivateQuote.getQuote(id)
+    .then(data => {
+      const {
+        name,
+        customer_name,
+        customer_address,
+        customer_email,
+        products
+      } = data;
+
+      this.setState({
+        name,
+        customer_name: customer_name || "",
+        customer_address: customer_address || "",
+        customer_email: customer_email || "",
+        productsArr: products || [],
+        isLoading:false 
+      });
+      this.handleData();
+    })
+    .catch(err => {
+      console.error(err);
+    })
   }
+
+  handleData = () => {
+    this.state.productsArr.map(id => {
+      return this.getProduct(id);
+    });
+  };
+
+  getProduct = id => {
+    PublicProducts.getProduct(id).then(product => {
+      const { products } = this.state;
+      console.log('asdf',products)
+      const newProducts = products;
+
+      newProducts.push(product);
+      this.setState({
+        products: newProducts
+      })
+    })
+  }
+
+  calculateSubtotal = products => {
+    return products
+      .reduce((acc, product) => {
+        const pretax = acc + product.price;
+        return pretax;
+      }, 0)
+      .toFixed(2);
+  };
+
+  calculateVAT = products => {
+    return (this.calculateSubtotal(products) * 0.21).toFixed(2);
+  };
+
+  calculateTotal = products => {
+    return (this.calculateSubtotal(products) * 1.21).toFixed(2);
+  };
+
   render() {
+    console.log(this.state)
     return (
       <div className="public-quote">
         <div className="quote-template">
@@ -33,14 +94,37 @@ class PublicQuote extends Component {
               <p>www.thor.es</p>
             </div>
             <div className="quote-info">
-              <QuoteInfo sendData={this.handleInfoData} />
-            </div>
+                  <div className="customer-info">
+                    <input
+                      type="text"
+                      defaultValue={this.state.name}
+                      name="name"
+                  
+                    />
+                    <input
+                      type="text"
+                      defaultValue={this.state.customer_name}
+                      name="customer_name"
+          
+                    />
+                    <input
+                      type="text"
+                      defaultValue={this.state.customer_address}
+                      name="customer_address"
+                    />
+                    <input
+                      type="text"
+                      defaultValue={this.state.customer_email}
+                      name="customer_email"
+                    />
+                  </div>
+                </div>
           </div>
           <div className="quote-products">
             <div className="quote-products-component-div">
               {/* Products returned after using the product picker */}
               <div className="quote-product">
-                {/* <ul className="quote-product-list">
+                <ul className="quote-product-list">
                   {this.state.products.map(product => {
                     return (
                       <li className="quote-product-line" key={product._id}>
@@ -64,7 +148,7 @@ class PublicQuote extends Component {
                       </li>
                     );
                   })}
-                </ul> */}
+                </ul>
               </div>
               <div>
                 <br />
@@ -74,21 +158,21 @@ class PublicQuote extends Component {
                     <span className="quote-product-subtotal-title">
                       SUBTOTAL
                     </span>
-                    {/* <span className="quote-product-subtotal-value">
+                    <span className="quote-product-subtotal-value">
                       {this.calculateSubtotal(this.state.products)}€
-                    </span> */}
+                    </span>
                   </div>
                   <div className="quote-product-vat">
                     <span className="quote-product-vat-title">VAT 21%</span>
                     <span className="quote-product-vat-value">
-                      {/* {this.calculateVAT(this.state.products)}€ */}
+                      {this.calculateVAT(this.state.products)}€
                     </span>
                   </div>
                   <hr />
                   <div className="quote-product-checkout">
                     <span className="quote-product-checkout-title">TOTAL</span>
                     <span className="quote-product-checkout-value">
-                      {/* {this.calculateTotal(this.state.products)}€ */}
+                      {this.calculateTotal(this.state.products)}€
                     </span>
                   </div>
                 </div>
