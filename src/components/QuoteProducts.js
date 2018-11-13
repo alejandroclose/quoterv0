@@ -67,7 +67,7 @@ class QuoteProducts extends Component {
                       <div>{product.price}</div>
                       <div>{product.currency}</div>
                     </div>
-                  <div><button className="button is-small" onClick={this.handleDelete}>Delete</button></div>
+                  <div><button className="delete is-small" onClick={this.handleDelete}></button></div>
                   </div>
                 </li>
               );
