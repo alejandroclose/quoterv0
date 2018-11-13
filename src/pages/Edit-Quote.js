@@ -139,10 +139,15 @@ class EditQuote extends Component {
 
   handleDelete = (event) =>{
     const { products } = this.state;
+    const { productsArr } = this.state;
+
     products.splice(this.index,1);
+    productsArr.splice(this.index,1);
+
+
     this.setState ({
       products: products
-    })
+    });
   }
 
   /* Sum of product's price */
@@ -162,6 +167,7 @@ class EditQuote extends Component {
   };
 
   render() {
+    console.log(this.state)
     const {
       name,
       customer_name,
