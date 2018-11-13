@@ -239,4 +239,20 @@ select{
 .products-list{
   height: 750px;
   background-color: #f7f7f7;
+  margin: 0 auto;
+}
+
+.login-page{
+  align-items: center !important;
+}
+
+.login{
+  width: 300px;
+  height: 100%;
+}
+
+
+
+.login input{
+ margin: 10px !important;
 }
