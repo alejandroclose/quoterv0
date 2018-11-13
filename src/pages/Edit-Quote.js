@@ -137,6 +137,14 @@ class EditQuote extends Component {
     });
   };
 
+  handleDelete = (event) =>{
+    const { products } = this.state;
+    products.splice(this.index,1);
+    this.setState ({
+      products: products
+    })
+  }
+
   /* Sum of product's price */
   calculateSubtotal = products => {
     return (products.reduce((acc, product) => {
@@ -241,6 +249,7 @@ class EditQuote extends Component {
                         <div>{product.price}</div>
                         <div>{product.currency}</div>
                       </div>
+                      <div><button className="button is-small" onClick={this.handleDelete}>Delete</button></div>
                     </div>
                   </li>
                 );
