@@ -17,6 +17,8 @@ import AuthProvider from './components/AuthProvider';
 import './App.css';
 import "bulma-start/css/main.css";
 
+
+
 class App extends Component {
   render() {
     return (
