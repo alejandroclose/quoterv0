@@ -24,7 +24,10 @@ class QuoteProducts extends Component {
 
   handleDelete = (event) =>{
     const { products } = this.state;
+    // const { productsArr } = this.state;
+
     products.splice(this.index,1);
+    // productsArr.splice(this.index,1);
     this.setState ({
       products: products
     })
@@ -47,7 +50,7 @@ class QuoteProducts extends Component {
   };
 
   render() {
-
+    console.log(this.state)
     return (
       <div className="quote-products-component-div">
         {/* Products returned after using the product picker */}

@@ -1,9 +1,10 @@
 import axios from "axios";
+require('dotenv').config();
 
 class UsersApi {
   constructor() {
     this.usersApi = axios.create({
-      baseURL: "http://localhost:5000/profile",
+      baseURL: `${process.env.HEROKU_URI}/profile`,
       withCredentials: true
     });
   }
