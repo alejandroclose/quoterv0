@@ -4,7 +4,7 @@ require('dotenv').config();
 class Auth {
   constructor() {
     this.auth = axios.create({
-      baseURL: `${process.env.HEROKU_URI}`,
+      baseURL: process.env.HEROKU_URI,
       withCredentials: true
     })
   }
