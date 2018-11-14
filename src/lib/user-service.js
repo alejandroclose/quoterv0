@@ -4,7 +4,7 @@ require('dotenv').config();
 class UsersApi {
   constructor() {
     this.usersApi = axios.create({
-      baseURL: `${process.env.HEROKU_URI}/profile`,
+      baseURL: "https://quoterapp.herokuapp.com/profile",
       withCredentials: true
     });
   }
