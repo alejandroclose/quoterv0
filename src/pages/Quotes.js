@@ -20,6 +20,7 @@ class Quotes extends Component {
         });
       })
       .catch(error => console.error("Error!:", error));
+      
   }
 
   handleDeleteQuote(id) {
@@ -66,8 +67,7 @@ class Quotes extends Component {
                           <div className="card-footer">
                             <Link
                               to={`/quotes/${quote._id}`}
-                              className="card-footer-item fas fa-edit"
-                            />
+                              className="card-footer-item fas fa-edit"/>
                             <i
                               className="card-footer-item fas fa-trash trash"
                               onClick={() => this.handleDeleteQuote(quote._id)}
