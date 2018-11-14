@@ -48,7 +48,6 @@ class PublicQuote extends Component {
   getProduct = id => {
     PublicProducts.getProduct(id).then(product => {
       const { products } = this.state;
-      console.log('asdf',products)
       const newProducts = products;
 
       newProducts.push(product);
@@ -76,7 +75,6 @@ class PublicQuote extends Component {
   };
 
   render() {
-    console.log(this.state)
     return (
       <div className="public-quote">
         <div className="quote-template">
