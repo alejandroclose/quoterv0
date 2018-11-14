@@ -26,7 +26,6 @@ class Quotes extends Component {
     Quote.deleteQuote(id)
       .then(data => {
         this.props.history.push("/quotes");
-        window.location.reload();
       })
       .catch(err => {
         console.error(err);
