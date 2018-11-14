@@ -246,12 +246,16 @@ select{
   align-items: center !important;
 }
 
+.login-page{
+  display: flex;
+  justify-content: center !important;
+  margin: 90px 0 0 0;
+}
+
 .login{
   width: 300px;
   height: 100%;
 }
-
-
 
 .login input{
  margin: 10px !important;

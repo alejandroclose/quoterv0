@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import logo from "../logo_1.png";
 import { Link } from "react-router-dom";
+import auth from '../lib/auth-service';
 
 class Header extends Component {
 
   handleLogout = () => {
-    console.log('logout')
+    auth.logout()
+    .then(()=> {
+      window.location.reload();
+    })
+    .catch(err => {
+      console.error(err);
+    });
   }
   render() {
 
@@ -53,7 +60,7 @@ class Header extends Component {
                     <div className="navbar-item">User Profile</div>
                     <div className="navbar-item">Business Profile</div>
                     <hr className="navbar-divider" />
-                    <div className="navbar-item">Logout</div>
+                    <div className="navbar-item" onClick={this.handleLogout}>Logout</div>
                   </div>
                 </div>
               </div>
