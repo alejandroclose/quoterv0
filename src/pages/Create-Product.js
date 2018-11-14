@@ -20,7 +20,7 @@ class CreateProduct extends Component {
     } = this.state;
 
     Product.createProduct({
-      name, description, image, price, currency, owner
+      name, description, image, price, currency, unit, owner
     })
     .then(result => {
       this.props.history.push(`/products`);
