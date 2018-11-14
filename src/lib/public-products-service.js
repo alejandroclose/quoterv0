@@ -3,7 +3,7 @@ import axios from "axios";
 class PublicProductsApi {
   constructor() {
     this.publicProductsApi = axios.create({
-      baseURL: "http://localhost:5000/quote",
+      baseURL: "https://quoterapp.herokuapp.com/quote",
       withCredentials: true
     });
   }
