@@ -4,7 +4,7 @@ require('dotenv').config();
 class ProductsApi {
   constructor() {
     this.productsApi = axios.create({
-      baseURL: `${process.env.HEROKU_URI}/products`,
+      baseURL: "https://quoterapp.herokuapp.com/products",
       withCredentials: true
     });
   }
