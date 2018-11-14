@@ -29,24 +29,44 @@ class Login extends Component {
     const { username, password } = this.state;
     return (
       <div className="login-page">
-              <form onSubmit={this.handleFormSubmit} className="card login is-rounded">
-                <div className="card-content">
-                  <h1 className="title">
-                    Login
-                  </h1>
-                  <div className="control">
-                  <input className="input" type="text" name="username" value={username} onChange={this.handleChange} placeholder="username"/>
-                    <div className="control">
-                    <input className="input" type="password" name="password" value={password} onChange={this.handleChange} placeholder="password" />
-                    </div>
-                    <div className="control">
-                      <input type="submit" value="Login" className="button is-success is-medium is-fullwidth is-outlined"/>
-                    </div>
-                    <div className="">Don't have an account? <a href="/signup">Signup</a></div>
-                  </div>
-                </div>
-              </form>
-
+        <form
+          onSubmit={this.handleFormSubmit}
+          className="card login is-rounded"
+        >
+          <div className="card-content">
+            <h1 className="title">Quoter Login</h1>
+            <div className="control">
+              <input
+                className="input"
+                type="text"
+                name="username"
+                value={username}
+                onChange={this.handleChange}
+                placeholder="username"
+              />
+              <div className="control">
+                <input
+                  className="input"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleChange}
+                  placeholder="password"
+                />
+              </div>
+              <div className="control">
+                <input
+                  type="submit"
+                  value="Login"
+                  className="button is-success is-medium is-fullwidth is-outlined"
+                />
+              </div>
+              <div className="">
+                Don't have an account? <a href="/signup">Signup</a>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     );
   }

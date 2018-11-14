@@ -37,7 +37,9 @@ class ProductsList extends Component {
             <Header />
             <div className="page-content">
               <div className="main-page-content">
+              <div className="page-header">
                 <h1>My Products</h1>
+                </div>
                 <ul className="cards-collection">
                   {this.state.products.map(product => {
                     return (
@@ -49,7 +51,7 @@ class ProductsList extends Component {
                               to={`/products/${product._id}`}
                               className="card-footer-item"
                             >
-                              Edit
+                              {/* Edit */}
                             </Link>
                           </div>
                         </div>
