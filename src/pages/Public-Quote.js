@@ -40,7 +40,7 @@ class PublicQuote extends Component {
   }
 
   handleData = () => {
-    this.state.productsArr.map(id => {
+    this.state.productsArr.map(id => {
       return this.getProduct(id);
     });
   };
