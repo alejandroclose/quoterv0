@@ -141,9 +141,6 @@ class PublicQuote extends Component {
                             <div>{product.price}</div>
                             <div>{product.currency}</div>
                           </div>
-                          <div>
-                            <button onClick={this.handleDelete}>Delete</button>
-                          </div>
                         </div>
                       </li>
                     );
