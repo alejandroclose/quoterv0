@@ -240,3 +240,9 @@ select{
   height: 750px;
   background-color: #f7f7f7;
 }
+
+.login{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}

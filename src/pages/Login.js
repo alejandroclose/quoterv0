@@ -27,7 +27,7 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div className="test">
+      <div className="login">
         <form onSubmit={this.handleFormSubmit}>
         <label>Username:</label>
         <input type="text" name="username" value={username} onChange={this.handleChange}/>
