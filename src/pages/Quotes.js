@@ -7,7 +7,7 @@ import Quote from "../lib/quotes-service";
 
 class Quotes extends Component {
   state = {
-    quotes: [],
+    quotes:[],
     isLoading: true
   };
 
