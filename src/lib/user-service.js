@@ -20,6 +20,10 @@ class UsersApi {
   getUserQuotes() {
     return this.usersApi.get(`/quotes`).then(({ data }) => data);
   }
+
+  getUserServices() {
+    return this.usersApi.get(`/services`).then(({ data }) => data);
+  }
 }
 const usersApi = new UsersApi();
 
