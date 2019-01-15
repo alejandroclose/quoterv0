@@ -4,7 +4,7 @@ require('dotenv').config();
 class QuotesApi {
   constructor() {
     this.quotesApi = axios.create({
-      baseURL: `${process.env.HEROKU_URI}/quotes`,
+      baseURL: 'http://localhost:5000/quotes',
       withCredentials: true
     });
   }
