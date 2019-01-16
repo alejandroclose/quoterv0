@@ -3,7 +3,6 @@ import Users from "../lib/user-service.js";
 import Header from "../components/Header";
 import { withAuth } from "../components/AuthProvider";
 import { Link } from "react-router-dom";
-import servicessApi from "../lib/services-service.js";
 
 class ServicesList extends Component {
     state = {
@@ -45,6 +44,7 @@ class ServicesList extends Component {
                                         return (
                                             <div className="card" key={service._id}>
                                                 <div className="card-content">
+                                                    {service.name}
                                                     <div className="card-footer">
                                                         <Link to={`/services/${service._id}`} className="card-footer-item"> Edit</Link>
                                                     </div>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../logo_1.png";
+import logo from "../pointer_logo.png";
 import { Link } from "react-router-dom";
 
 class Header extends Component {
@@ -18,8 +18,7 @@ class Header extends Component {
         >
           <div className="navbar-brand">
             <Link className="navbar-item" to="/quotes">
-              <h1>Quoter</h1>
-              <img src={logo} width="30" height="75" alt="quoter logo" />
+              <img src={logo} width="110" height="100" alt="quoter logo" />
             </Link>
 
             <div
@@ -41,6 +40,9 @@ class Header extends Component {
             </a>
             <a href="/products" className="navbar-item">
               Products
+            </a>
+            <a href="/services" className="navbar-item">
+              Services
             </a>
             <div className="navbar-end">
               <div className="navbar-item">
