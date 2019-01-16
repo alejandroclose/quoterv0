@@ -35,15 +35,16 @@ class Header extends Component {
           </div>
 
           <div id="navbarBasicExample" className="navbar-menu">
-            <a href="/quotes" className="navbar-item">
-              Quotes
-            </a>
-            <a href="/products" className="navbar-item">
+            <Link to="/quotes" className="navbar-item">
+            Quotes
+            </Link>
+            
+            <Link to="/products" className="navbar-item">
               Products
-            </a>
-            <a href="/services" className="navbar-item">
+            </Link>
+            <Link to="/services" className="navbar-item">
               Services
-            </a>
+            </Link>
             <div className="navbar-end">
               <div className="navbar-item">
                 <div className="navbar-item has-dropdown is-hoverable">

@@ -82,9 +82,12 @@ export default class AuthProvider extends Component {
           </div>
       default:
         return (
-          <Provider value={{ isLogged, user, logout: this.logoutUser, setUser: this.setUser }}>
+          <div>
+            <Provider value={{ isLogged, user, logout: this.logoutUser, setUser: this.setUser }}>
             {children}
-          </Provider>    
+          </Provider>
+          </div>
+              
         );
     }
   }
