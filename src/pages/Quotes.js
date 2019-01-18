@@ -49,10 +49,10 @@ class Quotes extends Component {
             <Header />
             <div className="page-content">
               <div className="main-page-content">
-              <div className="page-header">
+              <div className="page-header page-header-quotes">
                 <h1>My Quotes</h1>
                 <Link
-                  className="button is-success is-outlined is small"
+                  className="button is-small add-btn is-outlined is small"
                   to="/quotes/new"
                 >
                   Add Quote
@@ -62,12 +62,12 @@ class Quotes extends Component {
                   {this.state.quotes.map(quote => {
                     return (
                       <div className="card" key={quote._id}>
-                        <div className="card-content">
+                        <div className="card-content card-content-quotes">
                           <div className="content">{quote.name}</div>
                           <div className="card-footer">
                             <Link
                               to={`/quotes/${quote._id}`}
-                              className="card-footer-item fas fa-edit"
+                              className="card-footer-item fas fa-edit edit-quote-btn"
                             />
                             <i
                               className="card-footer-item fas fa-trash trash"

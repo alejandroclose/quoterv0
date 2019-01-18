@@ -37,20 +37,28 @@ class ProductsList extends Component {
             <Header />
             <div className="page-content">
               <div className="main-page-content">
-                <h1>My Products</h1>
+              <div className="page-header page-header-products">
+              <h1>My Products</h1>
+              </div>
                 <ul className="cards-collection">
                   {this.state.products.map(product => {
                     return (
                       <div className="card" key={product._id}>
-                        <div className="card-content">
+                        <div className="card-content card-content-products">
                           <div className="content">{product.name}</div>
                           <div className="card-footer">
+                            <a>
                             <Link
                               to={`/products/${product._id}`}
-                              className="card-footer-item"
-                            >
-                              Edit
-                            </Link>
+                              className="card-footer-item fas fa-edit edit-product-btn"><span className="fa-icon-caption">Edit</span></Link>
+                            </a>
+                            <a>
+                            <i
+                              className="card-footer-item fas fa-trash trash"
+                            //   onClick={() => this.handleDeleteQuote(quote._id)}
+                            ><span className="fa-icon-caption">Delete</span></i>
+                            </a>
+                              
                           </div>
                         </div>
                       </div>

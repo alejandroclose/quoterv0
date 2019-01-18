@@ -38,15 +38,23 @@ class ServicesList extends Component {
                         <Header />
                         <div className="page-content">
                             <div className="main-page-content">
-                                <h1>My Services</h1>
+                            <div className="page-header page-header-services">
+                            <h1>My Services</h1>
+                            </div>
                                 <ul className="cards-collection">
                                     {this.state.services.map(service => {
                                         return (
                                             <div className="card" key={service._id}>
-                                                <div className="card-content">
+                                                <div className="card-content card-content-services">
+                                                    <div className="content">
                                                     {service.name}
+                                                    </div>
                                                     <div className="card-footer">
-                                                        <Link to={`/services/${service._id}`} className="card-footer-item"> Edit</Link>
+                                                        <Link to={`/services/${service._id}`} className="card-footer-item fas fa-edit edit-service-btn"/>
+                                                        <i
+                              className="card-footer-item fas fa-trash trash"
+                            //   onClick={() => this.handleDeleteQuote(quote._id)}
+                            />
                                                     </div>
                                                 </div>
                                             </div>

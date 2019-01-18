@@ -17,8 +17,8 @@ class Header extends Component {
           aria-label="main navigation"
         >
           <div className="navbar-brand">
-            <Link className="navbar-item" to="/quotes">
-              <img src={logo} width="110" height="100" alt="quoter logo" />
+            <Link className="navbar-item navbar-item-logo" to="/quotes">
+              <img className="navbar-logo" src={logo} alt="quoter logo" />
             </Link>
 
             <div
