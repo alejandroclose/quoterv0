@@ -21,7 +21,7 @@ class Header extends Component {
               <img className="navbar-logo" src={logo} alt="quoter logo" />
             </Link>
 
-            <div
+            {/* <div
               role="button"
               className="navbar-burger burger"
               aria-label="menu"
@@ -31,37 +31,10 @@ class Header extends Component {
               <span aria-hidden="true" />
               <span aria-hidden="true" />
               <span aria-hidden="true" />
-            </div>
+            </div> */}
           </div>
 
-          <div id="navbarBasicExample" className="navbar-menu">
-            <Link to="/quotes" className="navbar-item">
-            Quotes
-            </Link>
-            
-            <Link to="/products" className="navbar-item">
-              Products
-            </Link>
-            <Link to="/services" className="navbar-item">
-              Services
-            </Link>
-            <div className="navbar-end">
-              <div className="navbar-item">
-                <div className="navbar-item has-dropdown is-hoverable">
-                  <div className="navbar-link">
-
-                  </div>
-
-                  <div className="navbar-dropdown is-right">
-                    <div className="navbar-item">User Profile</div>
-                    <div className="navbar-item">Business Profile</div>
-                    <hr className="navbar-divider" />
-                    <div className="navbar-item">Logout</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </nav>
       </div>
     );

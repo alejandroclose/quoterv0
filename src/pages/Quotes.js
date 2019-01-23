@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Users from "../lib/user-service";
 import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
 import { withAuth } from "../components/AuthProvider";
 import Quote from "../lib/quotes-service";
 
@@ -40,7 +41,13 @@ class Quotes extends Component {
         return (
           <div>
             <Header />
-            Loading Quotes...
+            <div className="page-content">
+            <Sidebar/>
+            <div className="main-page-content">
+              LOADING QUOTES...</div>
+              </div>
+            
+            
           </div>
         );
       default:
@@ -48,6 +55,7 @@ class Quotes extends Component {
           <div className="quotes-list">
             <Header />
             <div className="page-content">
+            <Sidebar/>
               <div className="main-page-content">
               <div className="page-header page-header-quotes">
                 <h1>My Quotes</h1>

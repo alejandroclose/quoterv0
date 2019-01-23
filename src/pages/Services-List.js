@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Users from "../lib/user-service.js";
 import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
 import { withAuth } from "../components/AuthProvider";
 import { Link } from "react-router-dom";
 
@@ -29,7 +30,11 @@ class ServicesList extends Component {
                 return (
                     <div>
                         <Header />
-                        Loading Services...
+                        <div className="page-content">
+            <Sidebar/>
+            <div className="main-page-content">
+              LOADING SERVICES...</div>
+              </div>
                     </div>
                 );
             default:
@@ -37,6 +42,7 @@ class ServicesList extends Component {
                     <div className="services-list">
                         <Header />
                         <div className="page-content">
+                        <Sidebar/>
                             <div className="main-page-content">
                             <div className="page-header page-header-services">
                             <h1>My Services</h1>

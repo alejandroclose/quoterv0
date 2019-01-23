@@ -34,6 +34,14 @@
   margin: 30px;
 }
 
+.sidebar{
+  width: 10rem;
+}
+
+.box{
+  min-height: 100%;
+}
+
 .page-header {
   display: flex;
   flex-direction: row;
@@ -228,10 +236,6 @@
   text-align: end;
 }
 
-select{
-  /* padding-right: 24.3em !important; */
-}
-
 .select{
   max-width: 150% !important;
 }
@@ -318,6 +322,7 @@ select{
 .quotes-list{
   height: 750px;
   background-color: #f7f7f7;
+  margin: 0 auto;
 }
 
 .products-list{
@@ -340,8 +345,6 @@ select{
   width: 300px;
   height: 100%;
 }
-
-
 
 .login input{
  margin: 10px !important;
