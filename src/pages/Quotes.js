@@ -42,12 +42,12 @@ class Quotes extends Component {
           <div>
             <Header />
             <div className="page-content">
-            <Sidebar/>
-            <div className="main-page-content">
-              LOADING QUOTES...</div>
-              </div>
-            
-            
+              <Sidebar />
+              <div className="main-page-content">
+                LOADING QUOTES...</div>
+            </div>
+
+
           </div>
         );
       default:
@@ -55,34 +55,30 @@ class Quotes extends Component {
           <div className="quotes-list">
             <Header />
             <div className="page-content">
-            <Sidebar/>
+              <Sidebar />
               <div className="main-page-content">
-              <div className="page-header page-header-quotes">
-                <h1>My Quotes</h1>
-                <Link
-                  className="button is-small add-btn is-outlined is small"
-                  to="/quotes/new"
-                >
-                  Add Quote
-                </Link>
+                <div className="page-header page-header-quotes">
+                  <h1>My Quotes</h1>
                 </div>
                 <ul className="cards-collection">
+                  <Link
+                    to="/quotes/new"
+                  >
+                    <div className="card card-new-quote">
+                      <div className="card-content card-content-quotes">
+                        <div className="content card-content-new-quote"><div>Create a</div><div>New Quote</div><div className="icon"><i className="fa fa-money-check" /></div></div>
+                      </div>
+                    </div>
+                  </Link>
                   {this.state.quotes.map(quote => {
                     return (
                       <div className="card" key={quote._id}>
-                        <div className="card-content card-content-quotes">
-                          <div className="content">{quote.name}</div>
-                          <div className="card-footer">
-                            <Link
-                              to={`/quotes/${quote._id}`}
-                              className="card-footer-item fas fa-edit edit-quote-btn"
-                            />
-                            <i
-                              className="card-footer-item fas fa-trash trash"
-                              onClick={() => this.handleDeleteQuote(quote._id)}
-                            />
+                        <Link
+                          to={`/quotes/${quote._id}`}>
+                          <div className="card-content card-content-quotes">
+                            <div className="content">{quote.name}</div>
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     );
                   })}

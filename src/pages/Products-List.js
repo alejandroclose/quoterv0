@@ -30,11 +30,11 @@ class ProductsList extends Component {
           <div>
             <Header />
             <div className="page-content">
-            <Sidebar/>
-            <div className="main-page-content">
-              LOADING PRODUCTS...</div>
-              </div>
-            
+              <Sidebar />
+              <div className="main-page-content">
+                LOADING PRODUCTS...</div>
+            </div>
+
           </div>
         );
       default:
@@ -42,27 +42,26 @@ class ProductsList extends Component {
           <div className="products-list">
             <Header />
             <div className="page-content">
-            <Sidebar/>
+              <Sidebar />
               <div className="main-page-content">
-              <div className="page-header page-header-products">
-              <h1>My Products</h1>
-              </div>
+                <div className="page-header page-header-products">
+                  <h1>My Products</h1>
+                </div>
                 <ul className="cards-collection">
+                <Link
+                    to="/quotes/new"
+                  >
+                    <div className="card card-new-product">
+                      <div className="card-content card-content-product">
+                        <div className="content card-content-new-product"><div>Create a</div><div>New Product</div><div className="icon"><i className="fa fa-industry" /></div></div>
+                      </div>
+                    </div>
+                  </Link>
                   {this.state.products.map(product => {
                     return (
                       <div className="card" key={product._id}>
                         <div className="card-content card-content-products">
                           <div className="content">{product.name}</div>
-                          <div className="card-footer">
-                            
-                            <Link
-                              to={`/products/${product._id}`}
-                              className="card-footer-item fas fa-edit edit-product-btn"><span className="fa-icon-caption">Edit</span></Link>
-                            <i
-                              className="card-footer-item fas fa-trash trash"
-                            //   onClick={() => this.handleDeleteQuote(quote._id)}
-                            ><span className="fa-icon-caption">Delete</span></i>
-                          </div>
                         </div>
                       </div>
                     );

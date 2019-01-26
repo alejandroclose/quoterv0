@@ -31,10 +31,10 @@ class ServicesList extends Component {
                     <div>
                         <Header />
                         <div className="page-content">
-            <Sidebar/>
-            <div className="main-page-content">
-              LOADING SERVICES...</div>
-              </div>
+                            <Sidebar />
+                            <div className="main-page-content">
+                                LOADING SERVICES...</div>
+                        </div>
                     </div>
                 );
             default:
@@ -42,25 +42,27 @@ class ServicesList extends Component {
                     <div className="services-list">
                         <Header />
                         <div className="page-content">
-                        <Sidebar/>
+                            <Sidebar />
                             <div className="main-page-content">
-                            <div className="page-header page-header-services">
-                            <h1>My Services</h1>
-                            </div>
+                                <div className="page-header page-header-services">
+                                    <h1>My Services</h1>
+                                </div>
                                 <ul className="cards-collection">
+                                <Link
+                    to="/quotes/new"
+                  >
+                    <div className="card card-new-service">
+                      <div className="card-content card-content-services">
+                        <div className="content card-content-new-service"><div>Create a</div><div>New Service</div><div className="icon"><i className="fa fa-briefcase" /></div></div>
+                      </div>
+                    </div>
+                  </Link>
                                     {this.state.services.map(service => {
                                         return (
                                             <div className="card" key={service._id}>
                                                 <div className="card-content card-content-services">
                                                     <div className="content">
-                                                    {service.name}
-                                                    </div>
-                                                    <div className="card-footer">
-                                                        <Link to={`/services/${service._id}`} className="card-footer-item fas fa-edit edit-service-btn"/>
-                                                        <i
-                              className="card-footer-item fas fa-trash trash"
-                            //   onClick={() => this.handleDeleteQuote(quote._id)}
-                            />
+                                                        {service.name}
                                                     </div>
                                                 </div>
                                             </div>
