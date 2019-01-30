@@ -91,12 +91,28 @@
   font-size: 0.8rem;
 }
 
+.box-shaddow-quotes {
+  transition: box-shadow .7s;
+  float: left;
+}
+
+.box-shaddow-quotes:hover {
+  box-shadow: 0 0 5px#5476E8; 
+}
+
+
 .card-new-quote {
   background-color: #5476E8;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: box-shadow .3s;
+  float: left;
+}
+
+.card-new-quote:hover{
+  box-shadow: 0 0 5px black; 
 }
 
 .card-content-new-quote {
@@ -118,6 +134,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: box-shadow .3s;
+  float: left;
 }
 
 .card-content-new-product {
@@ -129,8 +147,21 @@
   font-size: 0.9rem;
 }
 
+.card-new-product:hover{
+  box-shadow: 0 0 5px black; 
+}
+
 .card-content-products {
   color: #1D1D1B;
+}
+
+.box-shaddow-products {
+  transition: box-shadow .7s;
+  float: left;
+}
+
+.box-shaddow-products:hover {
+  box-shadow: 0 0 5px#FF948D; 
 }
 
 .card-new-service{
@@ -139,6 +170,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.card-new-service:hover{
+  box-shadow: 0 0 5px black; 
 }
 
 .card-content-new-service {
@@ -152,6 +187,15 @@
 
 .card-content-services {
   color: #672E7A;
+}
+
+.box-shaddow-services {
+  transition: box-shadow .7s;
+  float: left;
+}
+
+.box-shaddow-services:hover {
+  box-shadow: 0 0 5px#53C1A0; 
 }
 
 .card-footer-item:not(:last-child) {

@@ -59,7 +59,7 @@ class ProductsList extends Component {
                   </Link>
                   {this.state.products.map(product => {
                     return (
-                      <div className="card" key={product._id}>
+                      <div className="card box-shaddow-products" key={product._id}>
                         <div className="card-content card-content-products">
                           <div className="content">{product.name}</div>
                         </div>

@@ -48,18 +48,18 @@ class ServicesList extends Component {
                                     <h1>My Services</h1>
                                 </div>
                                 <ul className="cards-collection">
-                                <Link
-                    to="/quotes/new"
-                  >
-                    <div className="card card-new-service">
-                      <div className="card-content card-content-services">
-                        <div className="content card-content-new-service"><div>Create a</div><div>New Service</div><div className="icon"><i className="fa fa-briefcase" /></div></div>
-                      </div>
-                    </div>
-                  </Link>
+                                    <Link
+                                        to="/quotes/new"
+                                    >
+                                        <div className="card card-new-service">
+                                            <div className="card-content card-content-services">
+                                                <div className="content card-content-new-service"><div>Create a</div><div>New Service</div><div className="icon"><i className="fa fa-briefcase" /></div></div>
+                                            </div>
+                                        </div>
+                                    </Link>
                                     {this.state.services.map(service => {
                                         return (
-                                            <div className="card" key={service._id}>
+                                            <div className="card box-shaddow-services" key={service._id}>
                                                 <div className="card-content card-content-services">
                                                     <div className="content">
                                                         {service.name}

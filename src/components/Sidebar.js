@@ -22,11 +22,7 @@ return <div>
           <span className="icon"><i className="fa fa-money-check"></i></span> Quotes
         </Link>
         <ul>
-            <li>All</li>
-            <li>Customers</li>
-        </ul>
-      </li>
-      <li>
+        <li>
         <Link to="/products">
           <span className="icon"><i className="fa fa-industry"></i></span>Products
         </Link>
@@ -35,6 +31,8 @@ return <div>
         <Link to="/services" className="">
           <span className="icon"><i className="fa fa-briefcase"></i></span>Services
         </Link>
+      </li>
+        </ul>
       </li>
     </ul>
   </aside>

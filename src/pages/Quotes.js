@@ -64,7 +64,7 @@ class Quotes extends Component {
                   <Link
                     to="/quotes/new"
                   >
-                    <div className="card card-new-quote">
+                    <div className="card card-new-quote box-shaddow-new-quote">
                       <div className="card-content card-content-quotes">
                         <div className="content card-content-new-quote"><div>Create a</div><div>New Quote</div><div className="icon"><i className="fa fa-money-check" /></div></div>
                       </div>
@@ -72,7 +72,7 @@ class Quotes extends Component {
                   </Link>
                   {this.state.quotes.map(quote => {
                     return (
-                      <div className="card" key={quote._id}>
+                      <div className="card box-shaddow-quotes" key={quote._id}>
                         <Link
                           to={`/quotes/${quote._id}`}>
                           <div className="card-content card-content-quotes">
